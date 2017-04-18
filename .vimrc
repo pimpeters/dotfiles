@@ -42,14 +42,22 @@ Plugin 'vim-airline/vim-airline-themes'
 
 Plugin 'tpope/vim-surround'
 
+Plugin 'airblade/vim-gitgutter'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 syntax on
+set noswapfile
+set softtabstop=4
 set tabstop=4
 set shiftwidth=4
+set autoindent
+set smartindent
+set cindent
 set ruler
+set noexpandtab
 set relativenumber
 let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
@@ -70,6 +78,5 @@ map <C-n> :NERDTreeToggle<CR>
 map <C-m> :TagbarToggle<CR>
 set laststatus=2
 let php_htmlInStrings = 1
-se t_Co=16
-let g:solarized_termcolors=256  
-set background=dark  
+let g:syntastic_python_python_exec = 'python3'
+autocmd Filetype python setlocal noexpandtab tabstop=4 shiftwidth=4
