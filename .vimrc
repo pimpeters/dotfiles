@@ -63,7 +63,6 @@ set guioptions-=l                                               "Disable Gui scr
 set guioptions-=L
 set guioptions-=r
 set guioptions-=R
-set shellcmdflag=-ic
 set nowrap
 let g:CommandTMaxFiles=500000
 let g:ag_prg='ag -S --nocolor --nogroup --column --ignore node_modules --ignore "./public/*" --ignore tags'
