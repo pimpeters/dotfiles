@@ -56,7 +56,7 @@ let g:ctrlp_max_depth=40
 nmap <C-r> :CtrlPBufTag<cr>
 nmap <C-t> :CommandT<cr>
 let g:phpcomplete_index_composer_command='/usr/local/bin/composer'
-colorscheme Dracula 
+colorscheme dracula 
 set splitright
 set guifont=Roboto\ Mono:h14
 set guioptions-=l                                               "Disable Gui scrollbars.
@@ -70,3 +70,6 @@ map <C-n> :NERDTreeToggle<CR>
 map <C-m> :TagbarToggle<CR>
 set laststatus=2
 let php_htmlInStrings = 1
+se t_Co=16
+let g:solarized_termcolors=256  
+set background=dark  
