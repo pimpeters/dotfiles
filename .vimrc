@@ -70,6 +70,3 @@ map <C-n> :NERDTreeToggle<CR>
 map <C-m> :TagbarToggle<CR>
 set laststatus=2
 let php_htmlInStrings = 1
-se t_Co=16
-let g:solarized_termcolors=256  
-set background=dark  
