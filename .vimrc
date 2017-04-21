@@ -12,8 +12,6 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/nerdtree'
 
-Plugin 'majutsushi/tagbar'
-
 Plugin 'scrooloose/syntastic'
 
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -44,39 +42,60 @@ Plugin 'tpope/vim-surround'
 
 Plugin 'airblade/vim-gitgutter'
 
+Plugin 'mhinz/vim-signify'
+
+Plugin 'Townk/vim-autoclose'
+
+Plugin 'othree/html5.vim'
+
+Plugin 'hail2u/vim-css3-syntax'
+
+Plugin 'mattn/emmet-vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+" Global settings
 syntax on
-set noswapfile
-set softtabstop=4
-set tabstop=4
-set shiftwidth=4
-set autoindent
-set smartindent
-set cindent
-set ruler
-set noexpandtab
-set relativenumber
-let g:ctrlp_max_files=0
-let g:ctrlp_max_depth=40
-nmap <C-r> :CtrlPBufTag<cr>
-nmap <C-t> :CommandT<cr>
-let g:phpcomplete_index_composer_command='/usr/local/bin/composer'
-colorscheme dracula 
-set splitright
-set guifont=Roboto\ Mono:h14
-set guioptions-=l                                               "Disable Gui scrollbars.
+set noswapfile " disable swapfile
+set tabstop=4 " columns for a tab (4 spaces == 1 tab)
+set softtabstop=4 " columns for a tab in insert mode
+set shiftwidth=4 " columns when using reidents (<< and >>)
+set noexpandtab " don't make tabs of the spaces
+"set autoindent   " disable for now because indents are set
+"set smartindent
+"set cindent
+set ruler " show line number in status bar
+set relativenumber " show relative line for easier movement
+set laststatus=2 " always show the status bar
+set splitbelow " naturally opening splits
+set splitright " naturally opening splits
+set guifont=Roboto\ Mono:h14 " use Roboto Mono as main font if using GUI
+set guioptions-=l " hack for GUI to disable scrollbar and such
 set guioptions-=L
 set guioptions-=r
 set guioptions-=R
-set nowrap
+set nowrap " don't wrap code
+
+" File specific settings
+autocmd Filetype python setlocal noexpandtab tabstop=4 shiftwidth=4 " use tabs for Pyton (overwrite system settings)
+
+" Color options
+colorscheme dracula 
+
+" Plugin settings
+let g:ctrlp_max_files=0
+let g:ctrlp_max_depth=40
 let g:CommandTMaxFiles=500000
 let g:ag_prg='ag -S --nocolor --nogroup --column --ignore node_modules --ignore "./public/*" --ignore tags'
+let php_htmlInStrings = 1 " show html tags in colors (in PHP)
+let g:syntastic_python_python_exec = 'python3' " use python3 for syntax checking
+let g:phpcomplete_index_composer_command='/usr/local/bin/composer'
+
+" Global mapping
 map <C-n> :NERDTreeToggle<CR>
-map <C-m> :TagbarToggle<CR>
-set laststatus=2
-let php_htmlInStrings = 1
-let g:syntastic_python_python_exec = 'python3'
-autocmd Filetype python setlocal noexpandtab tabstop=4 shiftwidth=4
+
+" Normalmode mapping
+nmap <C-r> :CtrlPBufTag<cr>
+nmap <C-t> :CommandT<cr>
