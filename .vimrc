@@ -52,6 +52,10 @@ Plugin 'hail2u/vim-css3-syntax'
 
 Plugin 'mattn/emmet-vim'
 
+Plugin 'janko-m/vim-test'
+
+Plugin 'Chun-Yang/vim-action-ag'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -89,6 +93,7 @@ let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
 let g:CommandTMaxFiles=500000
 let g:ag_prg='ag -S --nocolor --nogroup --column --ignore node_modules --ignore "./public/*" --ignore tags'
+let g:vim_action_ag_escape_chars = '#%.^$*+?()[{\\|'
 let php_htmlInStrings = 1 " show html tags in colors (in PHP)
 let g:syntastic_python_python_exec = 'python3' " use python3 for syntax checking
 let g:phpcomplete_index_composer_command='/usr/local/bin/composer'
@@ -96,6 +101,19 @@ let g:phpcomplete_index_composer_command='/usr/local/bin/composer'
 " Global mapping
 map <C-n> :NERDTreeToggle<CR>
 
-" Normalmode mapping
+" Normal mode mapping
 nmap <C-r> :CtrlPBufTag<cr>
 nmap <C-t> :CommandT<cr>
+nmap <C-b> :CommandTBuffer<cr>
+nmap * <Plug>AgActionWord
+
+" Visual mode mapping
+vmap * <Plug>AgActionVisual
+
+if &term =~ "xterm" || &term =~ "screen"
+	let g:CommandTCancelMap = ['<ESC>', '<C-c>']
+endif
+
+if !empty(glob("~/.vimrc.local"))
+	source ~/.vimrc.local
+:endif
