@@ -86,6 +86,7 @@ set nowrap " don't wrap code
 autocmd Filetype python setlocal noexpandtab tabstop=4 shiftwidth=4 " use tabs for Pyton (overwrite system settings)
 
 " Color options
+set t_Co=25
 colorscheme dracula 
 
 " Plugin settings
