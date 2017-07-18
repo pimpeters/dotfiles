@@ -32,8 +32,6 @@ Plugin 'ervandew/supertab'
 
 Plugin 'rking/ag.vim'
 
-Plugin 'ryanoasis/vim-devicons'
-
 Plugin 'vim-airline/vim-airline'
 
 Plugin 'vim-airline/vim-airline-themes'
