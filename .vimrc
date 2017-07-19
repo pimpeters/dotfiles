@@ -91,7 +91,7 @@ colorscheme dracula
 let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
 let g:CommandTMaxFiles=500000
-let g:ag_prg='ag -S --nocolor --nogroup --column --ignore node_modules --ignore "./public/*" --ignore tags'
+let g:ag_prg='ag -S --nocolor --nogroup --column --ignore node_modules --ignore "./public/*" --ignore "./vendor/*" --ignore tags'
 let g:vim_action_ag_escape_chars = '#%.^$*+?()[{\\|'
 let php_htmlInStrings = 1 " show html tags in colors (in PHP)
 let g:syntastic_python_python_exec = 'python3' " use python3 for syntax checking
