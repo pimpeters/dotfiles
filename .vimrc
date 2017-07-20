@@ -33,6 +33,7 @@ Plugin 'Chun-Yang/vim-action-ag'
 Plugin 'tobyS/pdv'
 Plugin 'tobyS/vmustache'
 Plugin 'SirVer/ultisnips'
+Plugin 'ctrlpvim/ctrlp.vim' 
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -57,6 +58,7 @@ set guioptions-=r
 set guioptions-=R
 set nowrap " don't wrap code
 set colorcolumn=80
+let mapleader = ","
 
 " File specific settings
 autocmd Filetype python setlocal noexpandtab tabstop=4 shiftwidth=4 " use tabs for Pyton (overwrite system settings)
@@ -76,16 +78,15 @@ let php_htmlInStrings = 1 " show html tags in colors (in PHP)
 let g:syntastic_python_python_exec = 'python3' " use python3 for syntax checking
 let g:phpcomplete_index_composer_command='/usr/local/bin/composer'
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
+let g:user_emmet_leader_key='<Leader>y'
 
 " Global mapping
-map <C-n> :NERDTreeToggle<CR>
+map <Leader>n :NERDTreeToggle<cr>
+map <Leader>p :call pdv#DocumentWithSnip()<cr>
+map <Leader>r :CtrlPBufTag<cr>
 
 " Normal mode mapping
-nmap <C-r> :CtrlPBufTag<cr>
-nmap <C-t> :CommandT<cr>
-nmap <C-b> :CommandTBuffer<cr>
 nmap * <Plug>AgActionWord
-nmap <C-p> :call pdv#DocumentWithSnip()<cr>
 
 " Visual mode mapping
 vmap * <Plug>AgActionVisual
