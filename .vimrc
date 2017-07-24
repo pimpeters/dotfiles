@@ -45,7 +45,7 @@ set noswapfile " disable swapfile
 set tabstop=4 " columns for a tab (4 spaces == 1 tab)
 set softtabstop=4 " columns for a tab in insert mode
 set shiftwidth=4 " columns when using reidents (<< and >>)
-set noexpandtab " don't make tabs of the spaces
+set expandtab " Use spaces instead of tabs (more global)
 set ruler " show line number in status bar
 set relativenumber " show relative line for easier movement
 set laststatus=2 " always show the status bar
