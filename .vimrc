@@ -63,6 +63,8 @@ let mapleader = ","
 
 " File specific settings
 autocmd Filetype python setlocal noexpandtab tabstop=4 shiftwidth=4 " use tabs for Pyton (overwrite system settings)
+autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
+set completeopt=longest,menuone
 
 " Color options
 set t_Co=25
@@ -78,6 +80,7 @@ let g:vim_action_ag_escape_chars = '#%.^$*+?()[{\\|'
 let php_htmlInStrings = 1 " show html tags in colors (in PHP)
 let g:syntastic_python_python_exec = 'python3' " use python3 for syntax checking
 let g:phpcomplete_index_composer_command='/usr/local/bin/composer'
+let g:phpcomplete_parse_docblock_comments =1
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
 let g:user_emmet_leader_key='<Leader>y'
 
