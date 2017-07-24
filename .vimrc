@@ -23,8 +23,6 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-surround'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'mhinz/vim-signify'
-Plugin 'Townk/vim-autoclose'
 Plugin 'othree/html5.vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'mattn/emmet-vim'
@@ -33,7 +31,9 @@ Plugin 'Chun-Yang/vim-action-ag'
 Plugin 'tobyS/pdv'
 Plugin 'tobyS/vmustache'
 Plugin 'SirVer/ultisnips'
-Plugin 'ctrlpvim/ctrlp.vim' 
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'Yggdroot/indentLine'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -58,6 +58,7 @@ set guioptions-=r
 set guioptions-=R
 set nowrap " don't wrap code
 set colorcolumn=80
+set backspace=indent,eol,start
 let mapleader = ","
 
 " File specific settings
@@ -65,7 +66,7 @@ autocmd Filetype python setlocal noexpandtab tabstop=4 shiftwidth=4 " use tabs f
 
 " Color options
 set t_Co=25
-colorscheme dracula 
+colorscheme dracula
 
 " Plugin settings
 let g:ctrlp_max_files=0
