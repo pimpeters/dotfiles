@@ -5,12 +5,9 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "plugins/colored-man-pages", from:oh-my-zsh
-zplug "plugins/battery", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/brew", from:oh-my-zsh
 zplug "denysdovhan/spaceship-zsh-theme", as:theme
 zplug "djui/alias-tips"
-zplug "raylee/tldr"
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -76,11 +73,8 @@ alias rm="rm -i"
 alias cp="cp -i"
 alias mv="mv -i"
 alias ssh="ssh -A"
-alias please="sudo"
 alias wget="wget -c"
 alias external_ip="curl -s icanhazip.com"
-alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 alias sprunge="curl -F 'sprunge=<-' http://sprunge.us/"
 alias ..="cd .."
 alias ...="cd ../.."
