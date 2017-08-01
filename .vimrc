@@ -59,6 +59,7 @@ set guioptions-=R
 set nowrap " don't wrap code
 set colorcolumn=80
 set backspace=indent,eol,start
+set showcmd
 let mapleader = ","
 
 " File specific settings
