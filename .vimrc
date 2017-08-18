@@ -61,12 +61,14 @@ set nowrap " don't wrap code
 set colorcolumn=80
 set backspace=indent,eol,start
 set showcmd
+set completeopt=longest,menuone
 let mapleader = ","
 
 " File specific settings
 autocmd Filetype python setlocal noexpandtab tabstop=4 shiftwidth=4 " use tabs for Pyton (overwrite system settings)
 autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
-set completeopt=longest,menuone
+autocmd FileType php autocmd BufWritePre <buffer> %s/\s\+$//e " remove whitespaces in PHP
+autocmd Filetype php autocmd BufWritePre <buffer> :%retab
 
 " Color options
 set t_Co=25
@@ -85,9 +87,11 @@ let g:phpcomplete_index_composer_command='/usr/local/bin/composer'
 let g:phpcomplete_parse_docblock_comments =1
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
 let g:user_emmet_leader_key='<Leader>y'
+let g:CommandTWildIgnore=&wildignore . ",*/node_modules/*,*/vendor/*"
 
 " Global mapping
 map <Leader>n :NERDTreeToggle<cr>
+map <Leader>m :NERDTreeFind<cr>
 map <Leader>p :call pdv#DocumentWithSnip()<cr>
 map <Leader>r :CtrlPBufTag<cr>
 
