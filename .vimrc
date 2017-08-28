@@ -67,8 +67,8 @@ let mapleader = ","
 " File specific settings
 autocmd Filetype python setlocal noexpandtab tabstop=4 shiftwidth=4 " use tabs for Pyton (overwrite system settings)
 autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
-autocmd FileType php autocmd BufWritePre <buffer> %s/\s\+$//e " remove whitespaces in PHP
-autocmd Filetype php autocmd BufWritePre <buffer> :%retab
+autocmd FileType php,blade autocmd BufWritePre <buffer> %s/\s\+$//e " remove whitespaces in PHP
+autocmd Filetype php,blade autocmd BufWritePre <buffer> :%retab
 
 " Color options
 set t_Co=25
