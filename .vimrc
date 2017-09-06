@@ -12,9 +12,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'junegunn/vim-easy-align'
-Plugin 'szw/vim-tags'
 Plugin 'shawncplus/phpcomplete.vim'
-Plugin 'kristijanhusak/vim-hybrid-material'
 Plugin 'dracula/vim'
 Plugin 'wincent/Command-T'
 Plugin 'ervandew/supertab'
@@ -52,16 +50,14 @@ set relativenumber " show relative line for easier movement
 set laststatus=2 " always show the status bar
 set splitbelow " naturally opening splits
 set splitright " naturally opening splits
-set guifont=Roboto\ Mono:h14 " use Roboto Mono as main font if using GUI
-set guioptions-=l " hack for GUI to disable scrollbar and such
-set guioptions-=L
-set guioptions-=r
-set guioptions-=R
 set nowrap " don't wrap code
 set colorcolumn=80
 set backspace=indent,eol,start
 set showcmd
 set completeopt=longest,menuone
+set lazyredraw
+" Additional space underneath here is like supposed
+set fillchars+=vert:\ 
 let mapleader = ","
 
 " File specific settings
