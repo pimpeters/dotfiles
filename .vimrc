@@ -33,6 +33,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Yggdroot/indentLine'
 Plugin 'jwalton512/vim-blade'
+Plugin 'FelikZ/ctrlp-py-matcher'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -56,8 +57,10 @@ set backspace=indent,eol,start
 set showcmd
 set completeopt=longest,menuone
 set lazyredraw
+set ttyfast
+
 " Additional space underneath here is like supposed
-set fillchars+=vert:\ 
+set fillchars=diff:·
 let mapleader = ","
 
 " File specific settings
@@ -65,16 +68,16 @@ autocmd Filetype python setlocal noexpandtab tabstop=4 shiftwidth=4 " use tabs f
 autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
 autocmd FileType php,blade autocmd BufWritePre <buffer> %s/\s\+$//e " remove whitespaces in PHP
 autocmd Filetype php,blade autocmd BufWritePre <buffer> :%retab
+autocmd BufEnter * :syn sync maxlines=500
 
 " Color options
 set t_Co=25
 colorscheme dracula
 
 " Plugin settings
-let g:ctrlp_max_files=0
-let g:ctrlp_max_depth=40
 let g:ctrlp_map = ''
-let g:CommandTMaxFiles=500000
+let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+let g:CommandTMaxFiles=40000
 let g:ag_prg='ag -S --nocolor --nogroup --column --ignore node_modules --ignore "./public/*" --ignore "./vendor/*" --ignore tags'
 let g:vim_action_ag_escape_chars = '#%.^$*+?()[{\\|'
 let php_htmlInStrings = 1 " show html tags in colors (in PHP)
@@ -92,10 +95,19 @@ map <Leader>p :call pdv#DocumentWithSnip()<cr>
 map <Leader>r :CtrlPBufTag<cr>
 
 " Normal mode mapping
-nmap * <Plug>AgActionWord
+nmap <Leader>* <Plug>AgActionWord
 
 " Visual mode mapping
-vmap * <Plug>AgActionVisual
+vmap <Leader>* <Plug>AgActionVisual
+
+if ! has('gui_running')
+  set ttimeoutlen=10
+  augroup FastEscape
+    autocmd!
+    au InsertEnter * set timeoutlen=0
+    au InsertLeave * set timeoutlen=1000
+  augroup END
+endif
 
 if &term =~ "xterm" || &term =~ "screen"
 	let g:CommandTCancelMap = ['<ESC>', '<C-c>']
