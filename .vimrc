@@ -14,12 +14,11 @@ Plugin 'scrooloose/syntastic'
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'dracula/vim'
 Plugin 'wincent/Command-T'
-Plugin 'rking/ag.vim'
+Plugin 'mileszs/ack.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'mattn/emmet-vim'
-Plugin 'Chun-Yang/vim-action-ag'
 Plugin 'tobyS/pdv'
 Plugin 'tobyS/vmustache'
 Plugin 'SirVer/ultisnips'
@@ -90,6 +89,10 @@ map <Leader>r :CtrlPBufTag<cr>
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ }
+
+if executable('ag')
+    let g:ackprg = 'ag -S --nogroup --column --ignore node_modules --ignore "./public/*" --ignore "./vendor/*" --ignore tags --vimgrep'
+endif
 
 if ! has('gui_running')
   set ttimeoutlen=10
