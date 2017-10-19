@@ -17,8 +17,7 @@ Plugin 'dracula/vim'
 Plugin 'wincent/Command-T'
 Plugin 'ervandew/supertab'
 Plugin 'rking/ag.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plugin 'itchyny/lightline.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'othree/html5.vim'
@@ -99,6 +98,10 @@ nmap <Leader>* <Plug>AgActionWord
 
 " Visual mode mapping
 vmap <Leader>* <Plug>AgActionVisual
+
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
 
 if ! has('gui_running')
   set ttimeoutlen=10
