@@ -11,25 +11,19 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
-Plugin 'junegunn/vim-easy-align'
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'dracula/vim'
 Plugin 'wincent/Command-T'
-Plugin 'ervandew/supertab'
 Plugin 'rking/ag.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'othree/html5.vim'
-Plugin 'hail2u/vim-css3-syntax'
 Plugin 'mattn/emmet-vim'
-Plugin 'janko-m/vim-test'
 Plugin 'Chun-Yang/vim-action-ag'
 Plugin 'tobyS/pdv'
 Plugin 'tobyS/vmustache'
 Plugin 'SirVer/ultisnips'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'tpope/vim-fugitive'
 Plugin 'Yggdroot/indentLine'
 Plugin 'jwalton512/vim-blade'
 Plugin 'FelikZ/ctrlp-py-matcher'
@@ -92,12 +86,6 @@ map <Leader>n :NERDTreeToggle<cr>
 map <Leader>m :NERDTreeFind<cr>
 map <Leader>p :call pdv#DocumentWithSnip()<cr>
 map <Leader>r :CtrlPBufTag<cr>
-
-" Normal mode mapping
-nmap <Leader>* <Plug>AgActionWord
-
-" Visual mode mapping
-vmap <Leader>* <Plug>AgActionVisual
 
 let g:lightline = {
       \ 'colorscheme': 'wombat',
