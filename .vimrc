@@ -26,6 +26,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'jwalton512/vim-blade'
 Plugin 'FelikZ/ctrlp-py-matcher'
+Plugin 'tpope/vim-fugitive'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -86,8 +87,27 @@ map <Leader>m :NERDTreeFind<cr>
 map <Leader>p :call pdv#DocumentWithSnip()<cr>
 map <Leader>r :CtrlPBufTag<cr>
 
+" Normal mode mapping
+" Move a line up/down with Shift-k/j
+nnoremap <S-j> :m .+1<CR>==
+nnoremap <S-k> :m .-2<CR>==
+
+" Visual mode mapping
+" Move selected lines up/down with Shift-k/j
+vnoremap <S-j> :m '>+1<CR>gv=gv
+vnoremap <S-k> :m '<-2<CR>gv=gv
+
 let g:lightline = {
       \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head',
+      \   'fileformat': 'LightlineFileformat',
+      \   'filetype': 'LightlineFiletype',
+      \ },
       \ }
 
 if executable('ag')
