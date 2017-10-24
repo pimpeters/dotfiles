@@ -98,17 +98,22 @@ vnoremap <S-j> :m '>+1<CR>gv=gv
 vnoremap <S-k> :m '<-2<CR>gv=gv
 
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
+      \ 'colorscheme': 'Dracula',
       \ 'component_function': {
       \   'gitbranch': 'fugitive#head',
       \   'fileformat': 'LightlineFileformat',
       \   'filetype': 'LightlineFiletype',
+      \   'filename': 'LightLineFilename'
+      \ },
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
       \ },
       \ }
+
+function! LightLineFilename()
+  return expand('%')
+endfunction
 
 if executable('ag')
     let g:ackprg = 'ag -S --nogroup --column --ignore node_modules --ignore "./public/*" --ignore "./vendor/*" --ignore tags --vimgrep'
