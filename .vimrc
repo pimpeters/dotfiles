@@ -27,6 +27,8 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'jwalton512/vim-blade'
 Plugin 'FelikZ/ctrlp-py-matcher'
 Plugin 'tpope/vim-fugitive'
+Plugin 'dylanaraps/wal.vim'
+Plugin 'noahfrederick/vim-noctu'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -64,8 +66,8 @@ autocmd Filetype php,blade autocmd BufWritePre <buffer> :%retab
 autocmd BufEnter * :syn sync maxlines=500
 
 " Color options
-set t_Co=25
-colorscheme dracula
+set t_Co=16
+colorscheme noctu
 
 " Plugin settings
 let g:ctrlp_map = ''
@@ -98,7 +100,7 @@ vnoremap <S-j> :m '>+1<CR>gv=gv
 vnoremap <S-k> :m '<-2<CR>gv=gv
 
 let g:lightline = {
-      \ 'colorscheme': 'Dracula',
+      \ 'colorscheme': 'wombat',
       \ 'component_function': {
       \   'gitbranch': 'fugitive#head',
       \   'fileformat': 'LightlineFileformat',
