@@ -62,6 +62,9 @@ export EDITOR=vim
 # plugin behaviour
 SPACESHIP_VI_MODE_SHOW=false
 SPACESHIP_PROMPT_SYMBOL=">"
+SPACESHIP_PACKAGE_SHOW=false
+SPACESHIP_PHP_SHOW=false
+SPACESHIP_NODE_SHOW=false
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
