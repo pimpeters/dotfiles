@@ -5,6 +5,7 @@ zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "plugins/colored-man-pages", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/vi-mode", from:oh-my-zsh
 zplug "denysdovhan/spaceship-zsh-theme", as:theme
 zplug "djui/alias-tips"
 
