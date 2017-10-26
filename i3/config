@@ -9,8 +9,8 @@ set $mod Mod4
 font pango: artwiz lemon 8
 
 # Custom keybinds
-bindsym F9 exec rofi -show run -fullscreen -padding 300 -font "Lucy Tewi 8"
-bindsym F10 exec rofi -show window -fullscreen -padding 300 -font "Lucy Tewi 8"
+bindsym F9 exec rofi -show run -fullscreen -padding 300 -font "Roboto Mono 10"
+bindsym F10 exec rofi -show window -fullscreen -padding 300 -font "Roboto Mono 10"
 bindsym F12 exec sh /home/pim/scripts/lock.sh
 bindsym Print exec scrot -u -e '/home/pim/scripts/file_upload.sh $f'
 bindsym --release $mod+Print exec scrot -s -e '/home/pim/scripts/file_upload.sh $f'
