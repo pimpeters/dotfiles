@@ -13,7 +13,7 @@ rofi.color-urgent: #0a1b2a, #dc322f, #0a1b2a, #dc322f, #fdf6e3
 *.cursorColor:  #ddc9dd
 
 ! black
-*.color0:       #0a1b2a
+*.color0:       #12293e
 *.color8:       #3c566c
 
 ! red
@@ -43,4 +43,3 @@ rofi.color-urgent: #0a1b2a, #dc322f, #0a1b2a, #dc322f, #fdf6e3
 ! white
 *.color7:       #e0d8e9
 *.color15:      #e4dfe9
-

@@ -72,7 +72,6 @@ colorscheme noctu
 " Plugin settings
 let g:ctrlp_map = ''
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
-let g:CommandTMaxFiles=40000
 let g:ag_prg='ag -S --nocolor --nogroup --column --ignore node_modules --ignore "./public/*" --ignore "./vendor/*" --ignore tags'
 let g:vim_action_ag_escape_chars = '#%.^$*+?()[{\\|'
 let php_htmlInStrings = 1 " show html tags in colors (in PHP)
@@ -93,6 +92,14 @@ map <Leader>r :CtrlPBufTag<cr>
 " Move a line up/down with Shift-k/j
 nnoremap <S-j> :m .+1<CR>==
 nnoremap <S-k> :m .-2<CR>==
+
+nnoremap <leader>. :CtrlPTag<cr>
+
+" Remove mapping for arrowkeys
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
 
 " Visual mode mapping
 " Move selected lines up/down with Shift-k/j
