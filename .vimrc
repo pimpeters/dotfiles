@@ -82,6 +82,10 @@ let g:phpcomplete_parse_docblock_comments =1
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
 let g:user_emmet_leader_key='<Leader>y'
 let g:CommandTWildIgnore=&wildignore . ",*/node_modules/*,*/vendor/*"
+let NERDTreeQuitOnOpen = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeShowHidden = 1
+let NERDTreeShowLineNumbers=1
 
 " Global mapping
 map <Leader>n :NERDTreeToggle<cr>
@@ -94,7 +98,15 @@ map <Leader>r :CtrlPBufTag<cr>
 nnoremap <S-j> :m .+1<CR>==
 nnoremap <S-k> :m .-2<CR>==
 
-nnoremap <leader>. :CtrlPTag<cr>
+" Show cursorline
+:nnoremap <Leader>c :set cursorline!<CR>
+
+" Show cursorcolumn
+:nnoremap <leader>x :set cursorcolumn!<CR>
+
+" Go fast through Git hunks in a file
+nmap <Leader>] <Plug>GitGutterNextHunk
+nmap <Leader>[ <Plug>GitGutterPrevHunk
 
 " Remove mapping for arrowkeys
 noremap <Up> <NOP>
