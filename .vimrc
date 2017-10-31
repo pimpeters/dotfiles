@@ -63,6 +63,9 @@ autocmd FileType php,blade autocmd BufWritePre <buffer> %s/\s\+$//e " remove whi
 autocmd Filetype php,blade autocmd BufWritePre <buffer> :%retab
 autocmd BufEnter * :syn sync maxlines=500
 
+" Search while typing
+set incsearch
+
 " Color options
 set t_Co=16
 colorscheme noctu
