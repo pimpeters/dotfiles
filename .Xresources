@@ -17,8 +17,8 @@ rofi.color-urgent: #0a1b2a, #dc322f, #0a1b2a, #dc322f, #fdf6e3
 *.color8:       #3c566c
 
 ! red
-*.color1:       #ffffff
-*.color9:       #b59ea4
+*.color1:       #d4617e
+*.color9:       #c47488
 
 ! green
 *.color2:       #55a186
@@ -32,13 +32,13 @@ rofi.color-urgent: #0a1b2a, #dc322f, #0a1b2a, #dc322f, #fdf6e3
 *.color4:       #5e839d
 *.color12:      #6a889d
 
-! magenta
+! grey
 *.color5:       #5f5f75
 *.color13:      #868697
 
-! cyan
+! lightgreen
 *.color6:       #79b49f
-*.color14:      #92bdae
+*.color14:      #add9ca
 
 ! white
 *.color7:       #e0d8e9

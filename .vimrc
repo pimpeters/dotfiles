@@ -69,6 +69,7 @@ set incsearch
 " Color options
 set t_Co=16
 colorscheme noctu
+hi String ctermfg=14
 
 " Plugin settings
 let g:ctrlp_map = ''
