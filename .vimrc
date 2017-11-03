@@ -81,7 +81,7 @@ let g:syntastic_python_python_exec = 'python3' " use python3 for syntax checking
 let g:phpcomplete_index_composer_command='/usr/local/bin/composer'
 let g:phpcomplete_parse_docblock_comments =1
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
-let g:user_emmet_leader_key='<Leader>y'
+let g:user_emmet_leader_key='<Leader>e'
 let g:CommandTWildIgnore=&wildignore . ",*/node_modules/*,*/vendor/*"
 let NERDTreeQuitOnOpen = 1
 let NERDTreeMinimalUI = 1
@@ -91,8 +91,15 @@ let NERDTreeShowLineNumbers=1
 " Global mapping
 map <Leader>n :NERDTreeToggle<cr>
 map <Leader>m :NERDTreeFind<cr>
-map <Leader>p :call pdv#DocumentWithSnip()<cr>
+map <Leader>q :call pdv#DocumentWithSnip()<cr>
 map <Leader>r :CtrlPBufTag<cr>
+
+map <leader>p "+p
+map <leader>y "+y
+map <leader>d "+d
+map <leader>Y "+Y
+map <leader>P "+P
+map <leader>D "+D
 
 " Normal mode mapping
 " Move a line up/down with Shift-k/j
