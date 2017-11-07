@@ -5,73 +5,62 @@
 # Set mod-key to super
 set $mod Mod4
 
-# 
+# Font inside i3
 font pango: artwiz lemon 8
 
 # Custom keybinds
-bindsym F9 exec rofi -show drun -fullscreen -hide-scrollbar -padding 300 -font "Roboto Mono 10"
-bindsym F10 exec rofi -show window -fullscreen -hide-scrollbar -padding 300 -font "Roboto Mono 10"
-bindsym F12 exec sh /home/pim/scripts/lock.sh
-bindsym Print exec scrot -u -e '/home/pim/scripts/file_upload.sh $f'
-bindsym --release $mod+Print exec scrot -s -e '/home/pim/scripts/file_upload.sh $f'
+bindsym $mod+r exec rofi -show drun -fullscreen -hide-scrollbar -padding 300 -font "Roboto Mono 10"
+bindsym $mod+space exec rofi -show window -fullscreen -hide-scrollbar -padding 300 -font "Roboto Mono 10"
+bindsym Scroll_Lock exec sh /home/pim/scripts/lock.sh
+bindsym Print exec maim ~/screenshots/$(date +%d-%m-%Y).png -u -q 1 | ~/scripts/file_upload.sh ~/screenshots/$(date +%d-%m-%Y).png
+bindsym --release $mod+Print exec maim ~/screenshots/$(date +%d-%m-%Y).png -s -u -q 1 | ~/scripts/file_upload.sh ~/screenshots/$(date +%d-%m-%Y).png
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
+# Binded applications
 bindsym $mod+Return exec terminator
+bindsym $mod+c exec google-chrome-stable
 
-# kill focused window
+# Kill focused window
 bindsym $mod+Shift+q kill
 
-# change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+# Change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+# Move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
-# move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+# Split in horizontal orientation
+bindsym $mod+Shift+v split h
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
-
-# split in horizontal orientation
-bindsym $mod+h split h
-
-# split in vertical orientation
+# Split in vertical orientation
 bindsym $mod+v split v
 
-# enter fullscreen mode for the focused container
+# Enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
-# change container layout (stacked, tabbed, toggle split)
+# Change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
-# toggle tiling / floating
+# Toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
-
-# focus the parent container
+# Focus the parent container
 bindsym $mod+a focus parent
 
-# switch to workspace
+# Sticky a window
+bindsym $mod+Shift+s sticky toggle
+
+# Switch to workspace
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
 bindsym $mod+3 workspace 3
@@ -79,11 +68,14 @@ bindsym $mod+4 workspace 4
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
+bindsym $mod+8 workspace 8; layout tabbed
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
-# move focused container to workspace
+# Switch to previous worksapce
+bindsym $mod+Tab workspace back_and_forth
+
+# Move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
 bindsym $mod+Shift+2 move container to workspace 2
 bindsym $mod+Shift+3 move container to workspace 3
@@ -98,59 +90,36 @@ bindsym $mod+Shift+0 move container to workspace 10
 # Assign workspaces to outputs
 workspace 1 output DVI-I-1
 workspace 2 output DVI-D-0
-workspace 3 output DVI-D-0
-workspace 4 output DVI-D-0
-workspace 5 output DVI-D-0
-workspace 8 output DVI-I-1
+workspace 8 output DVI-D-0
+workspace 9 output DVI-D-0
 workspace 10 output DVI-D-0
 
 # Assign applications to workspaces
-for_window [class="discord"] move to workspace 3
-for_window [class="Spotify"] move to workspace 4
-for_window [class="Slack"] move to workspace 5
-for_window [class="Steam"] move to workspace 8
+for_window [class="discord"] move to workspace 8
+for_window [class="Slack"] move to workspace 8
+for_window [class="Terminator" title="WeeChat"] move to workspace 8
+for_window [class="Spotify"] move to workspace 9
 for_window [class="Nylas"] move to workspace 10
 
 # Open application on startup
 exec --no-startup-id discord
-exec --no-startup-id spotify
 exec --no-startup-id slack
-exec --no-startup-id steam-runtime
+exec --no-startup-id terminator -e weechat -T WeeChat
+exec --no-startup-id spotify
 exec --no-startup-id nylas-mail
 
-# reload the configuration file
+# Reload the configuration file
 bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
+# Exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-
-# resize window (you can also use the mouse for that)
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-
-bindsym $mod+r mode "resize"
+# Resizing floating windows
+bindsym $mod+Shift+Control+h resize shrink width 10 px or 10 ppt
+bindsym $mod+Shift+Control+j resize grow height 10 px or 10 ppt
+bindsym $mod+Shift+Control+k resize shrink height 10 px or 10 ppt
+bindsym $mod+Shift+Control+l resize grow width 10 px or 10 ppt
 
 # Startup scripts
 exec --no-startup-id /usr/bin/compton --vsync none --refresh-rate 144
@@ -167,7 +136,7 @@ hide_edge_borders both
 # Don't focus 'hovered' windows
 focus_follows_mouse no
 
-# gaps
+# Gaps
 smart_gaps on
 gaps inner 6
 gaps outer 2
@@ -177,3 +146,41 @@ bindsym XF86AudioStop exec playerctl stop
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+
+# Settings colors
+
+# Special
+set_from_resource $foreground foreground
+set_from_resource $background background
+set_from_resource $cursorColor cursorColor
+# Black
+set_from_resource $color0  color0
+set_from_resource $color8  color8
+# Red
+set_from_resource $color1  color1
+set_from_resource $color9  color9
+# Green
+set_from_resource $color2  color2
+set_from_resource $color10 color10
+# Yellow
+set_from_resource $color3  color3
+set_from_resource $color11 color11
+# Blue
+set_from_resource $color4  color4
+set_from_resource $color12 color12
+# Grey
+set_from_resource $color5  color5
+set_from_resource $color13 color13
+# Lightgreen
+set_from_resource $color6  color6
+set_from_resource $color14 color14
+# White
+set_from_resource $color7  color7
+set_from_resource $color15 color15
+
+# i3 windows decoration
+# Class                 Border      Background  Text        Indicator   Child_border
+client.focused          $background $background $foreground $background $background
+client.focused_inactive $background $background $foreground $background $background
+client.unfocused        $background $background $color8     $background $background
+client.urgent           $background $background $color1     $background $background
