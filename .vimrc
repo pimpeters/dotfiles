@@ -56,6 +56,8 @@ filetype plugin indent on
 """""""""""""""""""
 " Enable syntax highlighting
 syntax on
+" Always show statusbar
+set laststatus=2
 " Colorscheme
 colorscheme noctu
 " Disable swap files
