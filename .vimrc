@@ -75,6 +75,8 @@ set splitright
 set nowrap
 " Show a column at line 80
 set colorcolumn=80
+" Always show statusbar
+set laststatus=2
 " Normal backspace behaviour
 set backspace=indent,eol,start
 " Completions like an IDE
@@ -85,12 +87,10 @@ set incsearch
 set t_Co=16
 " Show HTML syntax highlighting in PHP files
 let php_htmlInStrings = 1
-" Overwrite for Python to use tabs
-autocmd Filetype python setlocal noexpandtab tabstop=4 shiftwidth=4
 " Overwite for PHP/Blade to strip whitespaces on save
-autocmd FileType php,blade autocmd BufWritePre <buffer> %s/\s\+$//e
+autocmd FileType php,blade,python autocmd BufWritePre <buffer> %s/\s\+$//e
 " Overwite for PHP/Blade to retab on save
-autocmd Filetype php,blade autocmd BufWritePre <buffer> :%retab
+autocmd Filetype php,blade,python autocmd BufWritePre <buffer> :%retab
 
 """""""""""""""""""
 " Plugin settings "

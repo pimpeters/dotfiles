@@ -6,7 +6,6 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-autosuggestions"
 zplug "plugins/colored-man-pages", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/vi-mode", from:oh-my-zsh
 zplug "denysdovhan/spaceship-zsh-theme", as:theme
 zplug "djui/alias-tips"
 
@@ -61,6 +60,11 @@ export EDITOR=vim
 # plugin behaviour
 SPACESHIP_VI_MODE_SHOW=false
 SPACESHIP_PROMPT_SYMBOL=">"
+SPACESHIP_PROMPT_SEPARATE_LINE=false
+SPACESHIP_PROMPT_ADD_NEWLINE=false
+SPACESHIP_TIME_SHOW=true
+SPACESHIP_DIR_PREFIX="| "
+SPACESHIP_GIT_PREFIX="| "
 SPACESHIP_PACKAGE_SHOW=false
 SPACESHIP_PHP_SHOW=false
 SPACESHIP_NODE_SHOW=false

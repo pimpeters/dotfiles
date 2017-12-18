@@ -16,38 +16,38 @@ rofi.color-active: #0a1b2a, #268bd2, #0a1b2a, #268bd2, #fdf6e3
 rofi.color-urgent: #0a1b2a, #dc322f, #0a1b2a, #dc322f, #fdf6e3
 
 ! special
-*.foreground:   #ddc9dd
-*.background:   #0a1b2a
-*.cursorColor:  #ddc9dd
+*.foreground:   #f8f2f4
+*.background:   #151516
+*.cursorColor:  #f8f2f4
 
 ! black
-*.color0:       #12293e
-*.color8:       #3c566c
+*.color0:       #1e1e23
+*.color8:       #27272d
 
 ! red
-*.color1:       #d4617e
-*.color9:       #c47488
+*.color1:       #d798b5
+*.color9:       #e3b4ca
 
 ! green
-*.color2:       #55a186
-*.color10:      #a9cbbf
+*.color2:       #00ff68
+*.color10:      #67ffa5
 
 ! yellow
-*.color3:       #ccbaa4
-*.color11:      #ccc1b3
+*.color3:       #eba364
+*.color11:      #ebb98d
 
 ! blue
-*.color4:       #5e839d
-*.color12:      #6a889d
+*.color4:       #38bdc3
+*.color12:      #8be6ea
 
-! grey
-*.color5:       #5f5f75
-*.color13:      #868697
+! magenta
+*.color5:       #7b67aa
+*.color13:      #9c86cf
 
-! lightgreen
-*.color6:       #79b49f
-*.color14:      #add9ca
+! cyan
+*.color6:       #75afa3
+*.color14:      #a3cdc4
 
 ! white
-*.color7:       #e0d8e9
-*.color15:      #e4dfe9
+*.color7:       #978c98
+*.color15:      #dacbdb
