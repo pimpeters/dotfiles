@@ -68,6 +68,7 @@ SPACESHIP_GIT_PREFIX="| "
 SPACESHIP_PACKAGE_SHOW=false
 SPACESHIP_PHP_SHOW=false
 SPACESHIP_NODE_SHOW=false
+SPACESHIP_EXEC_TIME_SHOW=false
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
