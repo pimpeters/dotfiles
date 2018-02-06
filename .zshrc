@@ -1,13 +1,10 @@
 source ~/.zplug/init.zsh
 
 zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "zsh-users/zsh-autosuggestions"
-zplug "plugins/colored-man-pages", from:oh-my-zsh
-zplug "plugins/git", from:oh-my-zsh
 zplug "denysdovhan/spaceship-zsh-theme", as:theme
-zplug "djui/alias-tips"
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then

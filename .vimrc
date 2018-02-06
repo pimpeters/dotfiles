@@ -15,8 +15,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 " Syntax checker
 Plugin 'scrooloose/syntastic'
-" Improved PHP omni-completion
-Plugin 'shawncplus/phpcomplete.vim'
 " Fuzzyfinder for files and buffers
 Plugin 'wincent/Command-T'
 " Fuzzyfinder for buffers
@@ -24,24 +22,10 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'FelikZ/ctrlp-py-matcher'
 " Replacement for grep (finding strings inside files)
 Plugin 'mileszs/ack.vim'
-" Statusbar for vim
-Plugin 'itchyny/lightline.vim'
 " Shows Vim diff inline
 Plugin 'airblade/vim-gitgutter'
-" Better workflow for HTML/CSS
-Plugin 'mattn/emmet-vim'
-" Docblock generator for PHP
-Plugin 'tobyS/pdv'
-Plugin 'tobyS/vmustache'
-Plugin 'SirVer/ultisnips'
 " Display vertical lines for each indent level
 Plugin 'Yggdroot/indentLine'
-" Syntax highlighting for Blade templates
-Plugin 'jwalton512/vim-blade'
-" Git commands inside Vim
-Plugin 'tpope/vim-fugitive'
-" Highlight while search
-Plugin 'haya14busa/incsearch.vim'
 " Colorscheme
 Plugin 'Disgeae/vim-noctu'
 
@@ -104,10 +88,6 @@ let NERDTreeShowHidden = 1
 let NERDTreeShowLineNumbers=1
 " scrooloose/syntastic
 let g:syntastic_python_python_exec = 'python3'
-" shawncplus/phpcomplete.vim
-let g:phpcomplete_index_composer_command='/usr/local/bin/composer'
-let g:phpcomplete_parse_docblock_comments =1
-autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
 " wincent/Command-T
 let g:CommandTWildIgnore=&wildignore . ",*/node_modules/*,*/vendor/*"
 if &term =~ "xterm" || &term =~ "screen"
@@ -119,26 +99,6 @@ let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 if executable('ag')
     let g:ackprg = 'ag -S --nogroup --column --ignore node_modules --ignore "./public/*" --ignore "./vendor/*" --ignore tags --vimgrep'
 endif
-" itchyny/lightline.vim
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ 'component_function': {
-      \   'gitbranch': 'fugitive#head',
-      \   'fileformat': 'LightlineFileformat',
-      \   'filetype': 'LightlineFiletype',
-      \   'filename': 'LightLineFilename'
-      \ },
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ }
-function! LightLineFilename()
-  return expand('%')
-endfunction
-" tobyS/pdv
-let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
-
 
 
 """"""""""""""""""""""
@@ -173,17 +133,10 @@ map <Leader>m :NERDTreeFind<cr>
 " ctrlpvim/ctrlp.vim
 let g:ctrlp_map = ''
 map <Leader>r :CtrlPBufTag<cr>
-" tobyS/pdv
-map <Leader>q :call pdv#DocumentWithSnip()<cr>
 " airblade/vim-gitgutter
 nmap <Leader>] <Plug>GitGutterNextHunk
 nmap <Leader>[ <Plug>GitGutterPrevHunk
-" haya14busa/incsearch.vim 
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-" mattn/emmet-vim
-let g:user_emmet_leader_key='<Leader>e'
+nmap <Leader>= <Plug>GitGutterPreviewHunk
 
 """"""""""""""""
 " Local .vimrc "
