@@ -4,6 +4,7 @@
 set nocompatible
 filetype off
 
+au BufEnter /private/tmp/crontab.* setl backupcopy=yes
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
@@ -54,6 +55,8 @@ set shiftwidth=4
 set expandtab
 " Relative linenumbers
 set relativenumber
+" Current linenumber
+set nu
 " More natural feelings when opening splits
 set splitbelow
 set splitright
@@ -77,6 +80,8 @@ let php_htmlInStrings = 1
 autocmd FileType php,blade,python autocmd BufWritePre <buffer> %s/\s\+$//e
 " Overwite for PHP/Blade to retab on save
 autocmd Filetype php,blade,python autocmd BufWritePre <buffer> :%retab
+" Fix for editing crontabs
+au BufEnter /private/tmp/crontab.* setl backupcopy=yes
 
 """""""""""""""""""
 " Plugin settings "
