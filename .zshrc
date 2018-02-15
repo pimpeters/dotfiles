@@ -63,12 +63,14 @@ SPACESHIP_TIME_SHOW=true
 SPACESHIP_DIR_PREFIX="| "
 SPACESHIP_GIT_PREFIX="| "
 SPACESHIP_GIT_BRANCH_PREFIX=""
+SPACESHIP_CHAR_SYMBOL=""
 SPACESHIP_PACKAGE_SHOW=false
 SPACESHIP_PHP_SHOW=false
 SPACESHIP_NODE_SHOW=false
 SPACESHIP_EXEC_TIME_SHOW=false
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+bindkey '^R' history-incremental-search-backward
 
 # my aliases
 alias l="ls -aFG"
