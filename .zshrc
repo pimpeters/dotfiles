@@ -76,6 +76,8 @@ SPACESHIP_PACKAGE_SHOW=false
 SPACESHIP_PHP_SHOW=false
 SPACESHIP_NODE_SHOW=false
 SPACESHIP_EXEC_TIME_SHOW=false
+SPACESHIP_USER_SHOW=false
+SPACESHIP_HOST_SHOW=false
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 bindkey '^R' history-incremental-search-backward

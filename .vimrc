@@ -27,8 +27,10 @@ Plugin 'mileszs/ack.vim'
 Plugin 'airblade/vim-gitgutter'
 " Display vertical lines for each indent level
 Plugin 'Yggdroot/indentLine'
+" Git functions wrapper
+Plugin 'tpope/vim-fugitive'
 " Colorscheme
-Plugin 'Disgeae/vim-noctu'
+Plugin 'pimpeters/vim-noctu'
 
 """"""""""
 " Vundle "
@@ -41,6 +43,8 @@ filetype plugin indent on
 """""""""""""""""""
 " Enable syntax highlighting
 syntax on
+" Use old regular expression engine
+set re=1
 " Always show statusbar
 set laststatus=2
 " Colorscheme
