@@ -31,6 +31,10 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'tpope/vim-fugitive'
 " Colorscheme
 Plugin 'pimpeters/vim-noctu'
+" Inline PHP docs
+Plugin 'alvan/vim-php-manual'
+" Range, pattern and substitute preview
+Plugin 'markonm/traces.vim'
 
 """"""""""
 " Vundle "
@@ -98,7 +102,7 @@ let NERDTreeShowLineNumbers=1
 " scrooloose/syntastic
 let g:syntastic_python_python_exec = 'python3'
 " wincent/Command-T
-let g:CommandTWildIgnore=&wildignore . ",*/node_modules/*,*/vendor/*"
+let g:CommandTWildIgnore=&wildignore . ",*/node_modules/*,*/vendor/*,*/includes/src"
 if &term =~ "xterm" || &term =~ "screen"
 	let g:CommandTCancelMap = ['<ESC>', '<C-c>']
 endif
@@ -108,6 +112,8 @@ let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 if executable('ag')
     let g:ackprg = 'ag -S --nogroup --column --ignore node_modules --ignore "./public/*" --ignore "./vendor/*" --ignore tags --vimgrep'
 endif
+" airblade/vim-gitgutter
+autocmd BufWritePost * GitGutter
 
 
 """"""""""""""""""""""
@@ -122,16 +128,6 @@ map <leader>d "+d
 map <leader>Y "+Y
 map <leader>P "+P
 map <leader>D "+D
-" Move lines up/down
-nnoremap <S-j> :m .+1<CR>==
-nnoremap <S-k> :m .-2<CR>==
-vnoremap <S-j> :m '>+1<CR>gv=gv
-vnoremap <S-k> :m '<-2<CR>gv=gv
-" Disable arrowkeys
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
 
 """"""""""""""""""""""
 " Plugin keybindings "
