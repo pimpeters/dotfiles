@@ -15,9 +15,10 @@ Plugin 'VundleVim/Vundle.vim'
 " Treeview of current dir
 Plugin 'scrooloose/nerdtree'
 " Syntax checker
-Plugin 'scrooloose/syntastic'
+Plugin 'w0rp/ale'
 " Fuzzyfinder for files and buffers
-Plugin 'wincent/Command-T'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 " Fuzzyfinder for buffers
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'FelikZ/ctrlp-py-matcher'
@@ -35,6 +36,8 @@ Plugin 'pimpeters/vim-noctu'
 Plugin 'alvan/vim-php-manual'
 " Range, pattern and substitute preview
 Plugin 'markonm/traces.vim'
+" Expanding abbreviations
+Plugin 'mattn/emmet-vim'
 
 """"""""""
 " Vundle "
@@ -99,22 +102,14 @@ let NERDTreeQuitOnOpen = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeShowHidden = 1
 let NERDTreeShowLineNumbers=1
-" scrooloose/syntastic
-let g:syntastic_python_python_exec = 'python3'
-" wincent/Command-T
-let g:CommandTWildIgnore=&wildignore . ",*/node_modules/*,*/vendor/*,*/includes/src"
-if &term =~ "xterm" || &term =~ "screen"
-	let g:CommandTCancelMap = ['<ESC>', '<C-c>']
-endif
 " ctrlpvim/ctrlp.vim
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 " mileszs/ack.vim
 if executable('ag')
-    let g:ackprg = 'ag -S --nogroup --column --ignore node_modules --ignore "./public/*" --ignore "./vendor/*" --ignore tags --vimgrep'
+    let g:ackprg = 'ag --vimgrep'
 endif
 " airblade/vim-gitgutter
 autocmd BufWritePost * GitGutter
-
 
 """"""""""""""""""""""
 " Global keybindings "
@@ -132,6 +127,9 @@ map <leader>D "+D
 """"""""""""""""""""""
 " Plugin keybindings "
 """"""""""""""""""""""
+" junegunn/fzf.vim
+map <leader>t :FZF<cr>
+map <leader>b :Buffers<cr>
 " scrooloose/nerdtree
 map <Leader>n :NERDTreeToggle<cr>
 map <Leader>m :NERDTreeFind<cr>
@@ -142,6 +140,8 @@ map <Leader>r :CtrlPBufTag<cr>
 nmap <Leader>] <Plug>GitGutterNextHunk
 nmap <Leader>[ <Plug>GitGutterPrevHunk
 nmap <Leader>= <Plug>GitGutterPreviewHunk
+" mattn/emmet-vim
+let g:user_emmet_leader_key='<Leader>e'
 
 """"""""""""""""
 " Local .vimrc "
