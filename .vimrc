@@ -19,9 +19,6 @@ Plugin 'w0rp/ale'
 " Fuzzyfinder for files and buffers
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
-" Fuzzyfinder for buffers
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'FelikZ/ctrlp-py-matcher'
 " Replacement for grep (finding strings inside files)
 Plugin 'mileszs/ack.vim'
 " Shows Vim diff inline
@@ -102,8 +99,6 @@ let NERDTreeQuitOnOpen = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeShowHidden = 1
 let NERDTreeShowLineNumbers=1
-" ctrlpvim/ctrlp.vim
-let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 " mileszs/ack.vim
 if executable('ag')
     let g:ackprg = 'ag --vimgrep'
@@ -128,14 +123,12 @@ map <leader>D "+D
 " Plugin keybindings "
 """"""""""""""""""""""
 " junegunn/fzf.vim
-map <leader>t :FZF<cr>
+map <leader>f :FZF<cr>
 map <leader>b :Buffers<cr>
+map <leader>t :Tags<cr>
 " scrooloose/nerdtree
 map <Leader>n :NERDTreeToggle<cr>
 map <Leader>m :NERDTreeFind<cr>
-" ctrlpvim/ctrlp.vim
-let g:ctrlp_map = ''
-map <Leader>r :CtrlPBufTag<cr>
 " airblade/vim-gitgutter
 nmap <Leader>] <Plug>GitGutterNextHunk
 nmap <Leader>[ <Plug>GitGutterPrevHunk
