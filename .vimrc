@@ -14,6 +14,8 @@ Plugin 'VundleVim/Vundle.vim'
 """""""""""""""""""""""
 " Treeview of current dir
 Plugin 'scrooloose/nerdtree'
+" Git for NERDTree
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 " Syntax checker
 Plugin 'w0rp/ale'
 " Fuzzyfinder for files and buffers
@@ -35,6 +37,10 @@ Plugin 'alvan/vim-php-manual'
 Plugin 'markonm/traces.vim'
 " Expanding abbreviations
 Plugin 'mattn/emmet-vim'
+" Better syntax highlighting
+Plugin 'sheerun/vim-polyglot'
+" Namespaces
+Plugin 'arnaud-lb/vim-php-namespace'
 
 """"""""""
 " Vundle "
@@ -105,6 +111,8 @@ if executable('ag')
 endif
 " airblade/vim-gitgutter
 autocmd BufWritePost * GitGutter
+" junegunn/fzf.vim
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 """"""""""""""""""""""
 " Global keybindings "
@@ -135,6 +143,13 @@ nmap <Leader>[ <Plug>GitGutterPrevHunk
 nmap <Leader>= <Plug>GitGutterPreviewHunk
 " mattn/emmet-vim
 let g:user_emmet_leader_key='<Leader>e'
+
+function! IPhpInsertUse()
+    call PhpInsertUse()
+    call feedkeys('a',  'n')
+endfunction
+autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
+autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
 
 """"""""""""""""
 " Local .vimrc "
