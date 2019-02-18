@@ -10,6 +10,8 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
 # Customize to your needs...
 prompt pure
 prompt_newline='%666v'
