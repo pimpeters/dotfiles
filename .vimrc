@@ -29,6 +29,8 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'Yggdroot/indentLine'
 " Git functions wrapper
 Plugin 'tpope/vim-fugitive'
+" Better substitute
+Plugin 'tpope/vim-abolish'
 " Colorscheme
 Plugin 'pimpeters/vim-noctu'
 " Inline PHP docs
@@ -41,6 +43,8 @@ Plugin 'mattn/emmet-vim'
 Plugin 'sheerun/vim-polyglot'
 " Namespaces
 Plugin 'arnaud-lb/vim-php-namespace'
+" Vue.js syntax highlighting
+Plugin 'posva/vim-vue'
 
 """"""""""
 " Vundle "
@@ -134,13 +138,14 @@ map <leader>D "+D
 map <leader>f :FZF<cr>
 map <leader>b :Buffers<cr>
 map <leader>t :Tags<cr>
+map <leader>T :BTags<cr>
 " scrooloose/nerdtree
 map <Leader>n :NERDTreeToggle<cr>
 map <Leader>m :NERDTreeFind<cr>
 " airblade/vim-gitgutter
-nmap <Leader>] <Plug>GitGutterNextHunk
-nmap <Leader>[ <Plug>GitGutterPrevHunk
-nmap <Leader>= <Plug>GitGutterPreviewHunk
+nmap <Leader>] <Plug>(GitGutterNextHunk)
+nmap <Leader>[ <Plug>(GitGutterPrevHunk)
+nmap <Leader>= <Plug>(GitGutterPreviewHunk)
 " mattn/emmet-vim
 let g:user_emmet_leader_key='<Leader>e'
 
