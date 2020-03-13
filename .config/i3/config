@@ -20,7 +20,7 @@ floating_modifier $mod
 
 # Binded applications
 bindsym $mod+Return exec terminator
-bindsym $mod+c exec firefox-developer-edition
+bindsym $mod+c exec google-chrome-stable
 
 # Kill focused window
 bindsym $mod+Shift+q kill
@@ -96,22 +96,14 @@ workspace 2 output DVI-D-0
 workspace 7 output DVI-D-0
 workspace 8 output DVI-D-0
 workspace 9 output DVI-D-0
-workspace 10 output DVI-D-0
 
 # Assign applications to workspaces
-for_window [class="Telegram"] move to workspace 7
 for_window [class="discord"] move to workspace 8
-for_window [class="Slack"] move to workspace 8
-for_window [class="Terminator" title="WeeChat"] move to workspace 8
 for_window [class="Spotify"] move to workspace 9
-for_window [class="Thunderbird"] move to workspace 10
 
 # Open application on startup
 exec --no-startup-id discord
-exec --no-startup-id slack
 exec --no-startup-id spotify
-exec --no-startup-id thunderbird
-exec --no-startup-id telegram-desktop
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
@@ -127,11 +119,11 @@ bindsym $mod+Shift+Control+k resize shrink height 10 px or 10 ppt
 bindsym $mod+Shift+Control+l resize grow width 10 px or 10 ppt
 
 # Startup scripts
-exec --no-startup-id /usr/bin/compton --vsync none --refresh-rate 144
+exec --no-startup-id /usr/bin/compton --refresh-rate 144
 exec --no-startup-id /usr/bin/dunst
 
 # Reload scripts
-exec_always --no-startup-id feh --bg-fill /home/pim/wallpapers/pink-girl.png
+exec_always --no-startup-id feh --bg-fill /home/pim/wallpapers/snow.jpg
 exec_always --no-startup-id sh /home/pim/scripts/run_polybar.sh
 
 # Fix for background

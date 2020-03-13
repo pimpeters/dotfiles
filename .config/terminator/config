@@ -1,8 +1,10 @@
 [global_config]
+  title_hide_sizetext = True
   title_inactive_bg_color = "#3a3a3d"
   title_inactive_fg_color = "#f8f2f4"
   title_transmit_bg_color = "#27272d"
   title_transmit_fg_color = "#f8f2f4"
+  title_use_system_font = False
 [keybindings]
 [layouts]
   [[default]]
@@ -16,6 +18,7 @@
 [plugins]
 [profiles]
   [[default]]
+    allow_bold = False
     background_color = "#151516"
     background_darkness = 0.99
     background_type = transparent
@@ -26,4 +29,3 @@
     scrollbar_position = hidden
     show_titlebar = False
     use_system_font = False
-    visible_bell = True
