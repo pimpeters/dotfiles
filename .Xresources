@@ -1,19 +1,9 @@
 ! Xft settings
-
 Xft.dpi:                    96
 Xft.antialias:              true
 Xft.rgba:                   rgb
 Xft.hinting:                true
 Xft.hintstyle:              hintslight
-
-! ------------------------------------------------------------------------------
-! ROFI Color theme
-! ------------------------------------------------------------------------------
-rofi.color-enabled: true
-rofi.color-window: argb:d9151516, #151516, #151516
-rofi.color-normal: #151516, #27272d, #151516, #151516, #f8f2f4
-rofi.color-active: #8be6ea, #27272d, #151516, #151516, #f8f2f4
-rofi.color-urgent: #151516, #27272d, #151516, #151516, #f8f2f4
 
 ! special
 *.foreground:   #f8f2f4
