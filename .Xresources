@@ -41,3 +41,12 @@ Xft.hintstyle:              hintslight
 ! white
 *.color7:       #978c98
 *.color15:      #dacbdb
+
+
+URxvt.font: xft:xos4 terminus:pixelsize=8
+URxvt.scrollBar: false
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+URxvt.keysym.Control-Meta-c: builtin-string:
+URxvt.keysym.Control-Meta-v: builtin-string:
+
