@@ -24,9 +24,11 @@ margin-bottom = 0
 [bar/primary]
 monitor = ${env:MONITOR}
 width = 100%
-height = 20
+height = ${xrdb:polybar.height:20}
 radius = 0
 fixed-center = true
+
+dpi = ${xrdb:Xft.dpi:fallback value}
 
 background = ${colors.background}
 foreground = ${colors.foreground}
