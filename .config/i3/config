@@ -177,3 +177,5 @@ for_window [class="^.*"] border pixel 1
 exec_always --no-startup-id wal --vte -i $HOME/wallpapers/current.png &
 exec_always --no-startup-id feh --bg-fill $HOME/wallpapers/current.png
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+setxkbmap -option caps:escape
