@@ -19,6 +19,7 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 " Syntax checker
 Plugin 'w0rp/ale'
 " Fuzzyfinder for files and buffers
+" (if update of fzf is needed, run: :call fzf#install()
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 " Replacement for grep (finding strings inside files)
@@ -45,6 +46,8 @@ Plugin 'sheerun/vim-polyglot'
 Plugin 'arnaud-lb/vim-php-namespace'
 " Vue.js syntax highlighting
 Plugin 'posva/vim-vue'
+" Show which class / function you're in
+Plugin 'wellle/context.vim'
 
 """"""""""
 " Vundle "
