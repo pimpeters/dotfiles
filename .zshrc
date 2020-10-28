@@ -24,6 +24,7 @@ export LANG="$LC_ALL"
 prompt pure
 prompt_newline='%666v'
 PROMPT=" $PROMPT"
+PURE_PROMPT_SYMBOL='|'
 
 export KEYTIMEOUT=1
 export EDITOR=vim
