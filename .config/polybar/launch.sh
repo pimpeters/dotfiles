@@ -1,3 +1,5 @@
+#!/bin/sh
+
 killall -q polybar
 
 if type "xrandr"; then
@@ -7,4 +9,3 @@ if type "xrandr"; then
 else
   polybar --reload primary &
 fi
-

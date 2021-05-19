@@ -44,7 +44,7 @@ module-margin-right = 2
 font-0 = "ProggyCleanTT:size=12;0"
 
 modules-left = i3
-modules-center = cpu memory filesystem battery
+modules-center = cpu memory filesystem 
 modules-right = date
 
 [module/bspwm]

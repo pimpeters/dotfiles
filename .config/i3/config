@@ -31,8 +31,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # Startup scripts
-exec --no-startup-id /usr/bin/compton --refresh-rate 144
-
+exec --no-startup-id /usr/bin/picom
 exec --no-startup-id setxkbmap -option caps:escape
 exec --no-startup-id xrdb ~/.Xresources
 
@@ -153,8 +152,10 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-gaps inner 0
-gaps outer 0
+# gaps inner 0
+# gaps outer 0
+gaps inner 2
+gaps outer 2
 focus_follows_mouse no
 
 # Set colors from Xresources
@@ -177,6 +178,5 @@ client.background       $bg
 for_window [class="^.*"] border pixel 1
 
 # Reload scripts
-exec_always --no-startup-id wal --vte -i $HOME/wallpapers/current.png &
-exec_always --no-startup-id feh --bg-fill $HOME/wallpapers/current.png
+exec_always --no-startup-id feh --bg-fill $HOME/wallpapers/current.jpg &
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh

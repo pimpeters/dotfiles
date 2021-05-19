@@ -41,7 +41,7 @@ Plugin 'markonm/traces.vim'
 " Expanding abbreviations
 Plugin 'mattn/emmet-vim'
 " Better syntax highlighting
-Plugin 'sheerun/vim-polyglot'
+" Plugin 'sheerun/vim-polyglot'
 " Namespaces
 Plugin 'arnaud-lb/vim-php-namespace'
 " Vue.js syntax highlighting
@@ -95,6 +95,8 @@ set completeopt=longest,menuone
 set incsearch
 " Emulate 16 colors
 set t_Co=16
+" Avoid bells (prevents possible flashing screen)
+set belloff=all
 " Show HTML syntax highlighting in PHP files
 let php_htmlInStrings = 1
 " Overwite for PHP/Blade to strip whitespaces on save
