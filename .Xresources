@@ -1,53 +1,8 @@
-! Xft settings
-Xft.dpi:                    96
-Xft.antialias:              true
-Xft.rgba:                   rgb
-Xft.hinting:                true
-Xft.hintstyle:              hintslight
-
-! special
-*.foreground:   #f8f2f4
-*.background:   #151516
-*.cursorColor:  #f8f2f4
-
-! black
-*.color0:       #27272d
-*.color8:       #3a3a3d
-
-! red
-*.color1:       #d4617e
-*.color9:       #c47488
-
-! green
-*.color2:       #73da8e
-*.color10:      #89e4a1
-
-! yellow
-*.color3:       #ced686
-*.color11:      #e0e5b6
-
-! blue
-*.color4:       #38bdc3
-*.color12:      #8be6ea
-
-! magenta
-*.color5:       #e39ab8
-*.color13:      #f6c6ff
-
-! cyan
-*.color6:       #96e6ea
-*.color14:      #c4f6f8
-
-! white
-*.color7:       #978c98
-*.color15:      #dacbdb
-
-
-URxvt.font: xft:xos4 terminus:pixelsize=8
-URxvt.scrollBar: false
-URxvt.keysym.Shift-Control-V: eval:paste_clipboard
-URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
-URxvt.keysym.Control-Meta-c: builtin-string:
-URxvt.keysym.Control-Meta-v: builtin-string:
-
-#include ".Xresources.local"
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+Xcursor.size: 24
+Xcursor.theme: DMZ-White 
