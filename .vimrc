@@ -48,6 +48,8 @@ Plugin 'arnaud-lb/vim-php-namespace'
 Plugin 'posva/vim-vue'
 " Show which class / function you're in
 Plugin 'wellle/context.vim'
+" Github Copilot
+Plugin 'github/copilot.vim'
 
 """"""""""
 " Vundle "

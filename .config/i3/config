@@ -49,7 +49,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec terminator
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -208,7 +208,6 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 bindsym $mod++Shift+Return exec google-chrome-stable
 bindsym Control+$mod++l exec betterlockscreen -l dim
 
-exec_always --no-startup-id picom -b --config ~/.config/picom.conf 
 exec_always --no-startup-id feh --bg-fill $HOME/wallpapers/current.png &
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id setxkbmap -option caps:escape
