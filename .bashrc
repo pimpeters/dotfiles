@@ -1,8 +1,3 @@
-## Import colorscheme from 'wal' asynchronously
-# &   # Run the process in the background.
-# ( ) # Hide shell job control messages.
-(cat ~/.cache/wal/sequences &)
-
 # curl -L https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh > ~/.bash_git
 source ~/.bash_git
 
@@ -20,3 +15,8 @@ export GIT_PS1_SHOWCOLORHINTS=1
 export GIT_PS1_DESCRIBE_STYLE="branch"
 
 PROMPT_COMMAND='__git_ps1 "\[\e[34m\]\w\[\e[0m\]" "\[\e[35m\] | \[\e[0m\]"'
+
+# include .bashrc.local if it exists
+if [ -f $HOME/.bashrc.local ]; then
+    . $HOME/.bashrc.local
+fi
