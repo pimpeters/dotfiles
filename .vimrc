@@ -1,65 +1,45 @@
-""""""""""
-" Vundle "
-""""""""""
-set nocompatible
-filetype off
-
-au BufEnter /private/tmp/crontab.* setl backupcopy=yes
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-
-"""""""""""'"""""""""""
-" Plugins and options "
-"""""""""""""""""""""""
+" - PLUGINS -
+" Read install instructions on github.com/junegunn/vim-plug
+call plug#begin()
 " Treeview of current dir
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 " Git for NERDTree
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 " Syntax checker
-Plugin 'w0rp/ale'
+Plug 'w0rp/ale'
 " Fuzzyfinder for files and buffers
 " (if update of fzf is needed, run: :call fzf#install()
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 " Replacement for grep (finding strings inside files)
-Plugin 'mileszs/ack.vim'
+Plug 'mileszs/ack.vim'
 " Shows Vim diff inline
-Plugin 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 " Display vertical lines for each indent level
-Plugin 'Yggdroot/indentLine'
+Plug 'Yggdroot/indentLine'
 " Git functions wrapper
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 " Better substitute
-Plugin 'tpope/vim-abolish'
+Plug 'tpope/vim-abolish'
 " Colorscheme
-Plugin 'pimpeters/vim-noctu'
+Plug 'pimpeters/vim-noctu'
 " Inline PHP docs
-Plugin 'alvan/vim-php-manual'
+Plug 'alvan/vim-php-manual'
 " Range, pattern and substitute preview
-Plugin 'markonm/traces.vim'
+Plug 'markonm/traces.vim'
 " Expanding abbreviations
-Plugin 'mattn/emmet-vim'
-" Better syntax highlighting
-" Plugin 'sheerun/vim-polyglot'
+Plug 'mattn/emmet-vim'
 " Namespaces
-Plugin 'arnaud-lb/vim-php-namespace'
+Plug 'arnaud-lb/vim-php-namespace'
 " Vue.js syntax highlighting
-Plugin 'posva/vim-vue'
+Plug 'posva/vim-vue'
 " Show which class / function you're in
-Plugin 'wellle/context.vim'
+Plug 'wellle/context.vim'
 " Github Copilot
-Plugin 'github/copilot.vim'
+Plug 'github/copilot.vim'
+call plug#end()
 
-""""""""""
-" Vundle "
-""""""""""
-call vundle#end()
-filetype plugin indent on
-
-"""""""""""""""""""
-" Global settings "
-"""""""""""""""""""
+" - SETTINGS -
 " Enable syntax highlighting
 syntax on
 " Use old regular expression engine
@@ -105,12 +85,8 @@ let php_htmlInStrings = 1
 autocmd FileType php,blade,python autocmd BufWritePre <buffer> %s/\s\+$//e
 " Overwite for PHP/Blade to retab on save
 autocmd Filetype php,blade,python autocmd BufWritePre <buffer> :%retab
-" Fix for editing crontabs
-au BufEnter /private/tmp/crontab.* setl backupcopy=yes
 
-"""""""""""""""""""
-" Plugin settings "
-"""""""""""""""""""
+" - PLUGIN SETTINGS -
 " scrooloose/nerdtree
 let NERDTreeQuitOnOpen = 1
 let NERDTreeMinimalUI = 1
@@ -125,9 +101,7 @@ autocmd BufWritePost * GitGutter
 " junegunn/fzf.vim
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
-""""""""""""""""""""""
-" Global keybindings "
-""""""""""""""""""""""
+" - KEYBINDS -
 " Remap leader to comma
 let mapleader = ","
 " Copy/cut/paste from clipboard
@@ -138,9 +112,7 @@ map <leader>Y "+Y
 map <leader>P "+P
 map <leader>D "+D
 
-""""""""""""""""""""""
-" Plugin keybindings "
-""""""""""""""""""""""
+" - PLUGIN KEYBINDS -
 " junegunn/fzf.vim
 map <leader>f :FZF<cr>
 map <leader>b :Buffers<cr>
@@ -155,7 +127,7 @@ nmap <Leader>[ <Plug>(GitGutterPrevHunk)
 nmap <Leader>= <Plug>(GitGutterPreviewHunk)
 " mattn/emmet-vim
 let g:user_emmet_leader_key='<Leader>e'
-
+" arnaud-lb/vim-php-namespace
 function! IPhpInsertUse()
     call PhpInsertUse()
     call feedkeys('a',  'n')
@@ -163,9 +135,7 @@ endfunction
 autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
 autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
 
-""""""""""""""""
-" Local .vimrc "
-""""""""""""""""
+" - LOCAL VIMRC -
 if !empty(glob("~/.vimrc.local"))
 	source ~/.vimrc.local
 :endif
