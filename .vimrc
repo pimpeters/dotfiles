@@ -1,8 +1,6 @@
 " - PLUGINS -
 " Read install instructions on github.com/junegunn/vim-plug
 call plug#begin()
-" Treeview of current dir
-Plug 'scrooloose/nerdtree'
 " Syntax checker & LSP
 Plug 'dense-analysis/ale'
 " Fuzzyfinder for files and buffers
@@ -49,8 +47,6 @@ set incsearch
 autocmd BufWritePre * :%s/\s\+$//e
 
 " - PLUGIN SETTINGS -
-" scrooloose/nerdtree
-let NERDTreeShowHidden = 1
 " mileszs/ack.vim
 if executable('ag')
     let g:ackprg = 'ag --vimgrep'
@@ -65,15 +61,13 @@ let g:php_namespace_sort_after_insert = 1
 " - KEYBINDS -
 " Remap leader to comma
 let mapleader = ","
+map <Leader>m :Vexplore<cr>
 
 " - PLUGIN KEYBINDS -
 " junegunn/fzf.vim
 map <leader>f :FZF<cr>
 map <leader>b :Buffers<cr>
 map <leader>t :Tags<cr>
-" scrooloose/nerdtree
-map <Leader>n :NERDTreeToggle<cr>
-map <Leader>m :NERDTreeFind<cr>
 " airblade/vim-gitgutter
 nmap <Leader>] <Plug>(GitGutterNextHunk)
 nmap <Leader>[ <Plug>(GitGutterPrevHunk)
