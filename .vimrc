@@ -13,7 +13,7 @@ Plug 'airblade/vim-gitgutter'
 " Git functions wrapper
 Plug 'tpope/vim-fugitive'
 " Colorscheme
-Plug 'pimpeters/vim-noctu'
+Plug 'pimpeters/vim-persephone'
 " Range, pattern and substitute preview
 Plug 'markonm/traces.vim'
 " Namespaces
@@ -28,7 +28,7 @@ syntax on
 " Use system clipboard
 set clipboard=unnamed
 " Apply colorscheme
-colorscheme noctu
+colorscheme persephone
 " Disable swap files
 set noswapfile
 " Each tab is 4 spaces
@@ -45,6 +45,9 @@ set t_Co=16
 set incsearch
 " Strip whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
+" Marker at 80
+set colorcolumn=80
+
 
 " - PLUGIN SETTINGS -
 " mileszs/ack.vim
