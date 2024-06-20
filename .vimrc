@@ -1,8 +1,6 @@
 " - PLUGINS -
 " Read install instructions on github.com/junegunn/vim-plug
 call plug#begin()
-" Syntax checker & LSP
-Plug 'dense-analysis/ale'
 " Fuzzyfinder for files and buffers
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -16,10 +14,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'pimpeters/vim-persephone'
 " Range, pattern and substitute preview
 Plug 'markonm/traces.vim'
-" Namespaces
-Plug 'arnaud-lb/vim-php-namespace'
 " Github Copilot
 Plug 'github/copilot.vim'
+" LSP
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'yaegassy/coc-intelephense', {'do': 'yarn install --frozen-lockfile'}
 call plug#end()
 
 " - SETTINGS -
@@ -48,7 +47,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 " Marker at 80
 set colorcolumn=80
 
-
 " - PLUGIN SETTINGS -
 " mileszs/ack.vim
 if executable('ag')
@@ -75,13 +73,15 @@ map <leader>t :Tags<cr>
 nmap <Leader>] <Plug>(GitGutterNextHunk)
 nmap <Leader>[ <Plug>(GitGutterPrevHunk)
 nmap <Leader>= <Plug>(GitGutterPreviewHunk)
-" arnaud-lb/vim-php-namespace
-function! IPhpInsertUse()
-    call PhpInsertUse()
-    call feedkeys('a',  'n')
-endfunction
-autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
-autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
+" neoclide/coc.nvim
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> ga <Plug>(coc-codeaction-line)
+xmap <silent> ga <Plug>(coc-codeaction-selected)
+nmap <silent> <leader>a <Plug>(coc-codeaction-cursor)
+nmap <silent> gA <Plug>(coc-codeaction)
 
 " - LOCAL VIMRC -
 if !empty(glob("~/.vimrc.local"))
