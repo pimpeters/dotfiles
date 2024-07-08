@@ -56,8 +56,6 @@ endif
 autocmd BufWritePost * GitGutter
 " junegunn/fzf.vim
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
-" arnaud-lb/vim-php-namespace
-let g:php_namespace_sort_after_insert = 1
 
 " - KEYBINDS -
 " Remap leader to comma
