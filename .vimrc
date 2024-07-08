@@ -75,8 +75,6 @@ nmap <Leader>[ <Plug>(GitGutterPrevHunk)
 nmap <Leader>= <Plug>(GitGutterPreviewHunk)
 " neoclide/coc.nvim
 nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> ga <Plug>(coc-codeaction-line)
 xmap <silent> ga <Plug>(coc-codeaction-selected)
