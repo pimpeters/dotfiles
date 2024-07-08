@@ -78,8 +78,3 @@ nmap <silent> ga <Plug>(coc-codeaction-line)
 xmap <silent> ga <Plug>(coc-codeaction-selected)
 nmap <silent> <leader>a <Plug>(coc-codeaction-cursor)
 nmap <silent> gA <Plug>(coc-codeaction)
-
-" - LOCAL VIMRC -
-if !empty(glob("~/.vimrc.local"))
-	source ~/.vimrc.local
-:endif
