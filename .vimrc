@@ -19,6 +19,10 @@ Plug 'github/copilot.vim'
 " LSP
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'yaegassy/coc-intelephense', {'do': 'yarn install --frozen-lockfile'}
+" PHP CS Fixer
+Plug 'stephpy/vim-php-cs-fixer'
+" Treeview of current dir
+Plug 'scrooloose/nerdtree'
 call plug#end()
 
 " - SETTINGS -
@@ -56,11 +60,12 @@ endif
 autocmd BufWritePost * GitGutter
 " junegunn/fzf.vim
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
+" scrooloose/nerdtree
+let NERDTreeShowHidden = 1
 
 " - KEYBINDS -
 " Remap leader to comma
 let mapleader = ","
-map <Leader>m :Vexplore<cr>
 
 " - PLUGIN KEYBINDS -
 " junegunn/fzf.vim
@@ -78,3 +83,8 @@ nmap <silent> ga <Plug>(coc-codeaction-line)
 xmap <silent> ga <Plug>(coc-codeaction-selected)
 nmap <silent> <leader>a <Plug>(coc-codeaction-cursor)
 nmap <silent> gA <Plug>(coc-codeaction)
+" stephpy/vim-php-cs-fixer
+nnoremap <silent><leader>pcf :call PhpCsFixerFixFile()<CR>
+" scrooloose/nerdtree
+map <Leader>n :NERDTreeToggle<cr>
+map <Leader>m :NERDTreeFind<cr>
