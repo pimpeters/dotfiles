@@ -19,6 +19,7 @@ Plug 'github/copilot.vim'
 " LSP
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'yaegassy/coc-intelephense', {'do': 'yarn install --frozen-lockfile'}
+Plug 'yaegassy/coc-phpstan', {'do': 'yarn install --frozen-lockfile'}
 " PHP CS Fixer
 Plug 'stephpy/vim-php-cs-fixer'
 " Treeview of current dir
