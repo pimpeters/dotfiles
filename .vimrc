@@ -67,6 +67,7 @@ let NERDTreeShowHidden = 1
 " - KEYBINDS -
 " Remap leader to comma
 let mapleader = ","
+map <leader>s :Ack<space>
 
 " - PLUGIN KEYBINDS -
 " junegunn/fzf.vim
