@@ -72,6 +72,7 @@ let mapleader = ","
 map <leader>f :FZF<cr>
 map <leader>b :Buffers<cr>
 map <leader>t :Tags<cr>
+map <leader>h :History<cr>
 " airblade/vim-gitgutter
 nmap <Leader>] <Plug>(GitGutterNextHunk)
 nmap <Leader>[ <Plug>(GitGutterPrevHunk)
