@@ -79,12 +79,14 @@ map <leader>h :History<cr>
 nmap <Leader>] <Plug>(GitGutterNextHunk)
 nmap <Leader>[ <Plug>(GitGutterPrevHunk)
 nmap <Leader>= <Plug>(GitGutterPreviewHunk)
+" tpope/vim-fugitive
+nmap <leader>gs :Git<cr>
+nmap <leader>gd :Git diff<cr>
+nmap <leader>gb :Git blame<cr>
 " neoclide/coc.nvim
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> ga <Plug>(coc-codeaction-line)
-xmap <silent> ga <Plug>(coc-codeaction-selected)
-nmap <silent> <leader>a <Plug>(coc-codeaction-cursor)
 nmap <silent> gA <Plug>(coc-codeaction)
 " stephpy/vim-php-cs-fixer
 nnoremap <silent><leader>pcf :call PhpCsFixerFixFile()<CR>
