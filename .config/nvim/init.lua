@@ -113,12 +113,10 @@ vim.opt.incsearch = true
 -- Strip whitespace on save
 vim.cmd('autocmd BufWritePre * :%s/\\s\\+$//e')
 
--- Marker at 80
-vim.opt.colorcolumn = '80'
-
 -- - PLUGIN SETTINGS -
 
 -- airblade/vim-gitgutter
+vim.g.gitgutter_preview_win_floating = 0
 vim.cmd('autocmd BufWritePost * GitGutter')
 
 -- scrooloose/nerdtree
