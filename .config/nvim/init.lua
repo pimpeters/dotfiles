@@ -3,9 +3,6 @@ vim.opt.runtimepath:append("~/.local/share/nvim/lazy/lazy.nvim")
 
 -- Initialize lazy.nvim
 require('lazy').setup({
-  -- Replacement for grep (finding strings inside files)
-  'mileszs/ack.vim',
-
   -- Shows Vim diff inline
   'airblade/vim-gitgutter',
 
@@ -21,19 +18,59 @@ require('lazy').setup({
   -- Github Copilot
   'github/copilot.vim',
 
-  -- LSP
-  { 'neoclide/coc.nvim', branch = 'release' },
-  { 'yaegassy/coc-intelephense', build = 'yarn install --frozen-lockfile' },
-  { 'yaegassy/coc-phpstan', build = 'yarn install --frozen-lockfile' },
-
-  -- PHP CS Fixer
-  'stephpy/vim-php-cs-fixer',
-
   -- Treeview of current dir
   'scrooloose/nerdtree',
 
   -- Fuzzy finder for files
-  'nvim-telescope/telescope.nvim', tag = '0.1.8',
+  {
+    'nvim-telescope/telescope.nvim', tag = '0.1.8',
+    dependencies = { 'nvim-lua/plenary.nvim' }
+  },
+
+  -- Harpoon
+  { "ThePrimeagen/harpoon", branch = "harpoon2", dependencies = { "nvim-lua/plenary.nvim" } },
+
+  -- Treesitter
+  {
+      "nvim-treesitter/nvim-treesitter",
+      build = ":TSUpdate",
+      config = function ()
+        local configs = require("nvim-treesitter.configs")
+
+        configs.setup({
+            ensure_installed = {"lua", "vim", "vimdoc", "query", "javascript", "html", "php", "vue", "yaml", "xml" },
+            sync_install = false,
+            highlight = { enable = true },
+            indent = { enable = true },
+          })
+      end
+  },
+
+  -- Treesitter context
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    config = function()
+        require("treesitter-context").setup({
+            enable = true, -- Enable this plugin (can be false to disable)
+            max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
+            min_window_height = 0, -- Minimum editor window height to enable context. Values <= 0 mean no limit.
+            line_numbers = true, -- Show line numbers in the context window
+            multiline_threshold = 20, -- Maximum number of lines to show for a single context
+            trim_scope = "outer", -- Which context to trim. "outer", "inner", or "both"
+            mode = "cursor",  -- Line used to calculate context. Choices: 'cursor', 'topline'
+            separator = nil, -- Separator between context and content. Should be a single character string, like '-'.
+        })
+    end,
+  },
+
+  -- LSP
+    {
+        "neovim/nvim-lspconfig",
+        config = function()
+            require("lspconfig").intelephense.setup({})
+        end
+    },
 })
 
 -- - SETTINGS -
@@ -68,7 +105,7 @@ vim.opt.splitright = true
 vim.opt.wrap = false
 
 -- Enable 256 colors
-vim.opt.termguicolors = false  -- Set to false if you are not using true color
+vim.opt.termguicolors = false
 
 -- Search while typing
 vim.opt.incsearch = true
@@ -81,11 +118,6 @@ vim.opt.colorcolumn = '80'
 
 -- - PLUGIN SETTINGS -
 
--- mileszs/ack.vim
-if vim.fn.executable('ag') == 1 then
-  vim.g.ackprg = 'ag --vimgrep'
-end
-
 -- airblade/vim-gitgutter
 vim.cmd('autocmd BufWritePost * GitGutter')
 
@@ -97,15 +129,7 @@ vim.g.NERDTreeShowHidden = 1
 -- Remap leader to comma
 vim.g.mapleader = ','
 
--- Plugin key bindings
-vim.api.nvim_set_keymap('n', '<leader>s', ':Ack<space>', { noremap = true, silent = true })
-
--- nvim-telescope/telescope.nvim keybindings
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+vim.api.nvim_set_keymap('n', '<Leader>/', ':nohlsearch<cr>', { noremap = true, silent = true })
 
 -- airblade/vim-gitgutter keybindings
 vim.api.nvim_set_keymap('n', '<Leader>]', '<Plug>(GitGutterNextHunk)', { noremap = true, silent = true })
@@ -117,15 +141,42 @@ vim.api.nvim_set_keymap('n', '<leader>gs', ':Git<cr>', { noremap = true, silent 
 vim.api.nvim_set_keymap('n', '<leader>gd', ':Git diff<cr>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>gb', ':Git blame<cr>', { noremap = true, silent = true })
 
--- neoclide/coc.nvim keybindings
-vim.api.nvim_set_keymap('n', '<silent> gd', '<Plug>(coc-definition)', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<silent> gr', '<Plug>(coc-references)', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<silent> ga', '<Plug>(coc-codeaction-line)', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<silent> gA', '<Plug>(coc-codeaction)', { noremap = true, silent = true })
-
--- stephpy/vim-php-cs-fixer keybindings
-vim.api.nvim_set_keymap('n', '<silent><leader>pcf', ':call PhpCsFixerFixFile()<CR>', { noremap = true, silent = true })
-
 -- scrooloose/nerdtree keybindings
 vim.api.nvim_set_keymap('n', '<Leader>n', ':NERDTreeToggle<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>n', ':NERDTreeToggle<cr>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>m', ':NERDTreeFind<cr>', { noremap = true, silent = true })
+
+-- nvim-telescope/telescope.nvim keybindings
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>fF', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+vim.keymap.set('n', '<leader>ff', builtin.git_files, {})
+vim.keymap.set('n', '<leader>ft', builtin.tags, {})
+
+-- ThePrimeagen/harpoon keybindings
+local harpoon = require("harpoon")
+harpoon:setup()
+vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
+vim.keymap.set("n", "<leader>x", function() harpoon:list():next() end)
+vim.keymap.set("n", "<leader>z", function() harpoon:list():prev() end)
+vim.keymap.set("n", "<leader>c", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+
+-- neovim/nvim-lspconfig keybindings
+local lspconfig = require("lspconfig")
+local get_intelephense_license = function ()
+    local f = assert(io.open(os.getenv("HOME") .. "/intelephense/license.txt", "rb"))
+    local content = f:read("*a")
+    f:close()
+    return string.gsub(content, "%s+", "")
+end
+lspconfig.intelephense.setup({
+    init_options = {
+        licenceKey = get_intelephense_license()
+    },
+    on_attach = function(client, bufnr)
+        local opts = { noremap=true, silent=true }
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>gr', '<Cmd>lua vim.lsp.buf.references()<CR>', opts)
+    end
+})
