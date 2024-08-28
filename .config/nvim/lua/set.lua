@@ -2,6 +2,8 @@ vim.g.mapleader = ','
 
 vim.opt.guicursor = "" -- Enable syntax highlighting
 
+vim.opt.mouse = ''
+
 vim.opt.clipboard = 'unnamed'
 
 vim.opt.swapfile = false
@@ -21,7 +23,7 @@ vim.opt.wrap = false
 
 vim.opt.termguicolors = false
 
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 vim.cmd('autocmd BufWritePre * :%s/\\s\\+$//e')
