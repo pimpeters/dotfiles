@@ -8,5 +8,21 @@ return {
         vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
         vim.keymap.set('n', '<leader>ff', builtin.git_files, {})
         vim.keymap.set('n', '<leader>ft', builtin.tags, {})
+
+        require('telescope').setup{
+            pickers = {
+                find_files = {
+                    find_command = { 'rg', '--files', '--iglob', '!.git', '--hidden' },
+                },
+                grep_string = {
+                    additional_args = {'--hidden'},
+                    file_ignore_patterns = { '.git' },
+                },
+                live_grep = {
+                    additional_args = {'--hidden'},
+                    file_ignore_patterns = { '.git' },
+                }
+            }
+        }
     end
 }

@@ -9,5 +9,10 @@ return {
         vim.keymap.set("n", "<leader>x", function() harpoon:list():next() end)
         vim.keymap.set("n", "<leader>z", function() harpoon:list():prev() end)
         vim.keymap.set("n", "<leader>c", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+
+        vim.keymap.set("n", "<leader>h", function() harpoon:list():select(1) end)
+        vim.keymap.set("n", "<leader>j", function() harpoon:list():select(2) end)
+        vim.keymap.set("n", "<leader>k", function() harpoon:list():select(3) end)
+        vim.keymap.set("n", "<leader>l", function() harpoon:list():select(4) end)
     end
 }
