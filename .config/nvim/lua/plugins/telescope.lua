@@ -6,7 +6,9 @@ return {
         vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
         vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
         vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-        vim.keymap.set('n', '<leader>ft', builtin.tags, {})
+        vim.keymap.set("n", '<leader>ft', function()
+            require("telescope.builtin").tags({ only_sort_tags = true })
+        end)
 
         vim.keymap.set('n', '<leader>fF', function()
             vim.ui.input({ prompt = "Enter directory: " }, function(input)
