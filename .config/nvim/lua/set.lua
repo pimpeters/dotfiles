@@ -4,7 +4,7 @@ vim.opt.guicursor = "" -- Enable syntax highlighting
 
 vim.opt.mouse = ''
 
-vim.opt.clipboard = 'unnamed'
+vim.opt.clipboard = 'unnamedplus'
 
 vim.opt.swapfile = false
 
