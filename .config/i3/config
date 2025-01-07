@@ -208,7 +208,9 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 bindsym $mod++Shift+Return exec google-chrome-stable
 bindsym Control+$mod++l exec betterlockscreen -l dim
 
-exec_always --no-startup-id feh --bg-fill $HOME/wallpapers/current.png &
+exec_always --no-startup-id feh --bg-fill $HOME/wallpapers/current.jpg &
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id setxkbmap -option caps:escape
 exec_always --no-startup-id flameshot & 
+
+for_window [instance="Godot_Engine"] floating enable
