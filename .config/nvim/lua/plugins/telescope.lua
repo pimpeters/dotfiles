@@ -33,14 +33,12 @@ return {
         require('telescope').setup{
             pickers = {
                 find_files = {
-                    find_command = { 'rg', '--files', '--iglob', '!.git', '--hidden' },
+                    find_command = { 'rg', '-l', '\'.?\'',  '--iglob', '!.git', '--hidden' },
                 },
                 grep_string = {
-                    additional_args = {'--hidden'},
                     file_ignore_patterns = { '.git' },
                 },
                 live_grep = {
-                    additional_args = {'--hidden'},
                     file_ignore_patterns = { '.git' },
                 }
             }
