@@ -41,7 +41,12 @@ return {
                 },
                 live_grep = {
                     additional_args = {'--hidden'},
-                    file_ignore_patterns = { '.git' },
+                    file_ignore_patterns = { '.git', '%.min%.js$' },
+                }
+            },
+            defaults = {
+                preview = {
+                    filesize_limit = 0.1,
                 }
             }
         }
