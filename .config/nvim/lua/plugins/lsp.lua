@@ -10,6 +10,25 @@ return {
         lazy = false,
         config = true,
     },
+    {
+        'WhoIsSethDaniel/mason-tool-installer.nvim',
+        lazy = false,
+        dependencies = { 'williamboman/mason.nvim' },
+        config = function()
+            require('mason-tool-installer').setup({
+                ensure_installed = {
+                    -- Formatters and linters
+                    "phpstan",
+                    "shfmt",
+                    "stylua",
+                },
+                auto_update = false,
+                run_on_start = true,
+                start_delay = 3000, -- 3 second delay to avoid race conditions
+                debounce_hours = 5, -- only install once every 5 hours
+            })
+        end,
+    },
 
     -- Autocompletion
     {
@@ -52,8 +71,6 @@ return {
         config = function()
             local lsp_zero = require('lsp-zero')
 
-            -- lsp_attach is where you enable features that only work
-            -- if there is a language server active in the file
             local lsp_attach = function(client, bufnr)
                 local opts = {buffer = bufnr}
 
@@ -73,10 +90,15 @@ return {
             })
 
             require('mason-lspconfig').setup({
-                ensure_installed = {},
+                ensure_installed = {
+                    -- Language servers
+                    "gopls",         -- Go
+                    "intelephense",  -- PHP
+                    "lua_ls",        -- Lua
+                    "vimls",         -- Vim script
+                },
+                automatic_installation = true,
                 handlers = {
-                    -- this first function is the "default handler"
-                    -- it applies to every language server without a "custom handler"
                     function(server_name)
                         require('lspconfig')[server_name].setup({})
                     end,
