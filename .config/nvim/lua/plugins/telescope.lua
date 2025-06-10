@@ -39,7 +39,7 @@ return {
                 },
                 live_grep = {
                     additional_args = {'--hidden'},
-                    file_ignore_patterns = { '.git', '%.min%.js$' },
+                    file_ignore_patterns = { "^.git", '%.min%.js$' },
                 }
             },
             defaults = {
