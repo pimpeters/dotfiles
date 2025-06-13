@@ -4,7 +4,8 @@ return {
     config = function()
         require('lualine').setup {
             options = {
-                theme = 'Iceberg',
+                theme = 'iceberg',
+                globalstatus = true,
             }
         }
     end
