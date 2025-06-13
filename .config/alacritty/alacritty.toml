@@ -1,0 +1,12 @@
+[font]
+size = 14.0
+
+[font.normal]
+family = "FiraMono Nerd Font Mono"
+style = "Regular"
+
+[window]
+decorations = "None"
+
+[colors.primary]
+background = "#000000"
