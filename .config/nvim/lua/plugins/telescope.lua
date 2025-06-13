@@ -7,6 +7,7 @@ return {
         vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
         vim.keymap.set('n', '<leader>fb', builtin.oldfiles, {})
         vim.keymap.set('n', '<leader>ft', builtin.git_status, {})
+        vim.keymap.set('n', '<leader>fe', builtin.diagnostics, {})
 
         vim.keymap.set('n', '<leader>fF', function()
             vim.ui.input({ prompt = "Enter directory: " }, function(input)
