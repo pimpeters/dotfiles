@@ -5,6 +5,7 @@ return {
         require('lualine').setup {
             options = {
                 theme = 'iceberg',
+                path = 1,
             }
         }
     end
