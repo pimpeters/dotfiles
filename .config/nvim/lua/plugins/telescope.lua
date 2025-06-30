@@ -8,6 +8,7 @@ return {
         vim.keymap.set('n', '<leader>fb', builtin.oldfiles, {})
         vim.keymap.set('n', '<leader>ft', builtin.git_status, {})
         vim.keymap.set('n', '<leader>fe', function() builtin.diagnostics({ bufnr = 0 }) end)
+        vim.keymap.set('n', '<leader>fm', builtin.marks, {})
 
         vim.keymap.set('n', '<leader>fF', function()
             vim.ui.input({ prompt = "Enter directory: " }, function(input)
