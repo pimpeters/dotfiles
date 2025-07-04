@@ -23,7 +23,4 @@ vim.opt.wrap = false
 
 vim.opt.termguicolors = false
 
-vim.opt.hlsearch = true
-vim.opt.incsearch = true
-
 vim.cmd('autocmd BufWritePre * :%s/\\s\\+$//e')
