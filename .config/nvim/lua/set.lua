@@ -24,3 +24,19 @@ vim.opt.wrap = false
 vim.opt.termguicolors = false
 
 vim.cmd('autocmd BufWritePre * :%s/\\s\\+$//e')
+
+function LspDiagnosticsCounts()
+  local bufnr = vim.api.nvim_get_current_buf()
+  local error_count = #vim.diagnostic.get(bufnr, { severity = vim.diagnostic.severity.ERROR })
+  local warn_count  = #vim.diagnostic.get(bufnr, { severity = vim.diagnostic.severity.WARN })
+  local info_count  = #vim.diagnostic.get(bufnr, { severity = vim.diagnostic.severity.INFO })
+  local hint_count  = #vim.diagnostic.get(bufnr, { severity = vim.diagnostic.severity.HINT })
+  local parts = {}
+  if error_count > 0 then table.insert(parts, "E:" .. error_count) end
+  if warn_count > 0 then table.insert(parts, "W:" .. warn_count) end
+  if info_count > 0 then table.insert(parts, "I:" .. info_count) end
+  if hint_count > 0 then table.insert(parts, "H:" .. hint_count) end
+  return table.concat(parts, " ")
+end
+
+vim.o.statusline = "%f %h%m%r %{v:lua.LspDiagnosticsCounts()} %=%-14.(%l,%c%V%) %P"
