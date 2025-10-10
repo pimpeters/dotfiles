@@ -108,5 +108,23 @@ return {
                 }
             })
         end
+    },
+    {
+        'nvimtools/none-ls.nvim',
+        lazy = false,
+        config = function()
+            local null_ls = require("null-ls")
+            null_ls.setup({
+                sources = {
+                    null_ls.builtins.formatting.sql_formatter,
+                    null_ls.builtins.formatting.stylua,
+                    null_ls.builtins.formatting.shfmt,
+                    null_ls.builtins.diagnostics.phpstan,
+                },
+            })
+            vim.keymap.set('n', '<leader>f', function()
+                vim.lsp.buf.format({async = true})
+            end, {desc = 'Format buffer'})
+        end,
     }
 }
