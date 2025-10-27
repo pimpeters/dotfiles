@@ -115,6 +115,7 @@ return {
         config = function()
             local null_ls = require("null-ls")
             null_ls.setup({
+                temp_dir = "/tmp",
                 sources = {
                     null_ls.builtins.formatting.sql_formatter,
                     null_ls.builtins.formatting.stylua,
