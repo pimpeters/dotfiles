@@ -71,7 +71,7 @@ return {
     -- LSP
     {
         'neovim/nvim-lspconfig',
-        tag = 'v2.4.0',
+        tag = 'v2.5.0',
         cmd = {'LspInfo', 'LspInstall', 'LspStart'},
         event = {'BufReadPre', 'BufNewFile'},
         dependencies = {
