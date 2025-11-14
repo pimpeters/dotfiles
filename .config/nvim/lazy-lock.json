@@ -4,7 +4,6 @@
   "cmp-nvim-lsp": { "branch": "main", "commit": "bd5a7d6db125d4654b50eeae9f5217f24bb22fd3" },
   "copilot.vim": { "branch": "release", "commit": "da369d90cfd6c396b1d0ec259836a1c7222fb2ea" },
   "lazy.nvim": { "branch": "main", "commit": "202d8e92b3a74ac88eb3a7f1e40fb59b4c2a6535" },
-  "live-preview.nvim": { "branch": "main", "commit": "a1bb1b3a851df5276e53908276f5ae1d724d4812" },
   "lsp-zero.nvim": { "branch": "v4.x", "commit": "d388e2b71834c826e61a3eba48caec53d7602510" },
   "lsp_signature.nvim": { "branch": "master", "commit": "62cadce83aaceed677ffe7a2d6a57141af7131ea" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "d7b5feb6e769e995f7fcf44d92f49f811c51d10c" },
