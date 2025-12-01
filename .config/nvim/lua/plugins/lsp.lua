@@ -132,6 +132,13 @@ return {
             vim.lsp.config('vue_ls', vue_ls_config)
             vim.lsp.config('ts_ls', ts_ls_config)
             vim.lsp.enable({'vtsls', 'vue_ls'})
+
+            local lspconfig = require("lspconfig")
+
+            lspconfig.gdscript.setup({
+              cmd = { "nc", "localhost", "6005" },
+              root_dir = lspconfig.util.root_pattern("project.godot"),
+            })
         end
     },
     {
