@@ -11,3 +11,6 @@ startup_mode = "Maximized"
 
 [colors.primary]
 background = "#000000"
+
+[terminal.shell]
+program = "tmux"
