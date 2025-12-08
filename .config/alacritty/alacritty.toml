@@ -12,5 +12,5 @@ startup_mode = "Maximized"
 [colors.primary]
 background = "#000000"
 
-[terminal.shell]
-program = "tmux"
+[general]
+import = ["alacritty.local.toml"]
