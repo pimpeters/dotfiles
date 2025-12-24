@@ -40,3 +40,6 @@ function LspDiagnosticsCounts()
 end
 
 vim.o.statusline = "%f %h%m%r %{v:lua.LspDiagnosticsCounts()} %=%-14.(%l,%c%V%) %P"
+
+vim.keymap.set("n", "]b", ":bnext<CR>")
+vim.keymap.set("n", "[b", ":bprevious<CR>")
