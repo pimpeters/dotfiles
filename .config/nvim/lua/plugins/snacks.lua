@@ -29,7 +29,7 @@ return {
         { "<leader>fr", function() Snacks.picker.recent() end },
         { "<leader>fm", function() Snacks.picker.marks() end },
         { "<leader>fe", function() Snacks.picker.diagnostics_buffer() end },
-        { "<leader>fx", function() Snacks.picker.highlights({pattern = "hl_group:^Snacks"}) end },
+        { "<leader>fs", function() Snacks.picker.lsp_symbols() end },
     },
     config = function ()
          vim.api.nvim_set_hl(0, "SnacksPicker", { bg="#000000", fg="#FFFFFF" })
