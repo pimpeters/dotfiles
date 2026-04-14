@@ -1,8 +1,8 @@
 [font]
-size = 14.0
+size = 15.0
 
 [font.normal]
-family = "Hack Nerd Font Mono"
+family = "Lilex Nerd Font Mono"
 style = "Regular"
 
 [window]
