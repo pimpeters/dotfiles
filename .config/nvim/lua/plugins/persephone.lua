@@ -1,6 +1,1 @@
-return {
-    'pimpeters/vim-persephone',
-    config = function()
-        vim.cmd('colorscheme persephone')
-    end
-}
+vim.cmd('colorscheme persephone')
