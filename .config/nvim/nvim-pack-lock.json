@@ -17,7 +17,7 @@
       "src": "https://github.com/github/copilot.vim"
     },
     "gitsigns.nvim": {
-      "rev": "8d82c240f190fc33723d48c308ccc1ed8baad69d",
+      "rev": "dd3f588bacbeb041be6facf1742e42097f62165d",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
     "harpoon": {
@@ -31,7 +31,7 @@
       "version": "'v4.x'"
     },
     "lsp_signature.nvim": {
-      "rev": "a65b38f260cc3470a05b4afb84c8d868617d476d",
+      "rev": "f40bcf203812beaf26766ec0bc169a7f429fd730",
       "src": "https://github.com/ray-x/lsp_signature.nvim"
     },
     "mason-lspconfig.nvim": {
@@ -47,7 +47,7 @@
       "src": "https://github.com/williamboman/mason.nvim"
     },
     "none-ls.nvim": {
-      "rev": "8cd333aa66e08492d891bdad272208a620cb93a3",
+      "rev": "241ff8214b4ec051eb51e74a61ff729c0271b429",
       "src": "https://github.com/nvimtools/none-ls.nvim"
     },
     "nvim-cmp": {
@@ -60,7 +60,7 @@
       "version": "'v2.5.0'"
     },
     "nvim-tree.lua": {
-      "rev": "24cfcc94372e526fd9e1c2803ede9e0f1715e33f",
+      "rev": "f9bfc0059eca24546b69a7006110463da4808f8f",
       "src": "https://github.com/nvim-tree/nvim-tree.lua"
     },
     "nvim-treesitter": {
