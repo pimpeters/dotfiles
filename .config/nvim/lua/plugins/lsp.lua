@@ -19,26 +19,31 @@ require("lsp_signature").setup({
 })
 
 -- Autocompletion
+local lsp_zero = require("lsp-zero")
 local cmp = require("cmp")
+local cmp_action = lsp_zero.cmp_action()
+
 cmp.setup({
     sources = {
         { name = "nvim_lsp" },
+        { name = "luasnip" },
     },
     mapping = cmp.mapping.preset.insert({
         ["<C-Space>"] = cmp.mapping.complete(),
         ["<C-u>"] = cmp.mapping.scroll_docs(-4),
         ["<C-d>"] = cmp.mapping.scroll_docs(4),
+        ["<CR>"] = cmp.mapping.confirm({ select = true }),
+        ["<Tab>"] = cmp_action.luasnip_supertab(),
+        ["<S-Tab>"] = cmp_action.luasnip_shift_supertab(),
     }),
     snippet = {
         expand = function(args)
-            vim.snippet.expand(args.body)
+            require("luasnip").lsp_expand(args.body)
         end,
     },
 })
 
 -- LSP Configuration
-local lsp_zero = require("lsp-zero")
-
 local lsp_attach = function(_, bufnr)
     lsp_zero.default_keymaps({ buffer = bufnr })
 end

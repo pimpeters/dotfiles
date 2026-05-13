@@ -29,6 +29,7 @@ vim.pack.add({
     'https://github.com/hrsh7th/nvim-cmp',
     'https://github.com/hrsh7th/cmp-nvim-lsp',
     'https://github.com/L3MON4D3/LuaSnip',
+    'https://github.com/saadparwaiz1/cmp_luasnip',
     'https://github.com/ray-x/lsp_signature.nvim',
     'https://github.com/nvimtools/none-ls.nvim',
 }, { load = true })
