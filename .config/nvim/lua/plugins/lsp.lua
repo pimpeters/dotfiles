@@ -61,6 +61,9 @@ require("mason-lspconfig").setup({
     automatic_installation = true,
     handlers = {
         function(server_name)
+            if server_name == "ts_ls" or server_name == "vue_ls" then
+                return
+            end
             require("lspconfig")[server_name].setup({})
         end,
     },
@@ -89,7 +92,7 @@ local vue_ls_config = {}
 
 vim.lsp.config("vue_ls", vue_ls_config)
 vim.lsp.config("ts_ls", ts_ls_config)
-vim.lsp.enable({ "vtsls", "vue_ls" })
+vim.lsp.enable({ "ts_ls", "vue_ls" })
 
 -- Gdscript LSP (uses new vim.lsp API)
 vim.lsp.config("gdscript", {
