@@ -39,14 +39,21 @@ cmp.setup({
 -- LSP Configuration
 local lsp_zero = require("lsp-zero")
 
-local lsp_attach = function(client, bufnr)
-    local opts = { buffer = bufnr }
+local lsp_attach = function(_, bufnr)
+    lsp_zero.default_keymaps({ buffer = bufnr })
 end
 
 lsp_zero.extend_lspconfig({
     sign_text = true,
     lsp_attach = lsp_attach,
     capabilities = require("cmp_nvim_lsp").default_capabilities(),
+})
+
+vim.api.nvim_create_autocmd("LspAttach", {
+    group = vim.api.nvim_create_augroup("UserLspAttach", { clear = true }),
+    callback = function(event)
+        lsp_attach(nil, event.buf)
+    end,
 })
 
 require("mason-lspconfig").setup({
