@@ -13,8 +13,6 @@ local plugins = {
     "plugins.tree",
     "plugins.fugitive",
     "plugins.gitsigns",
-    "plugins.copilot",
-    "plugins.copilot-chat",
     "plugins.lsp",
 }
 

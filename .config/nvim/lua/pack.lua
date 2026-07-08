@@ -16,10 +16,6 @@ vim.pack.add({
     'https://github.com/tpope/vim-fugitive',
     'https://github.com/lewis6991/gitsigns.nvim',
 
-    -- Copilot
-    'https://github.com/github/copilot.vim',
-    'https://github.com/CopilotC-Nvim/CopilotChat.nvim',
-
     -- LSP & Completion
     { src = 'https://github.com/VonHeikemen/lsp-zero.nvim', version = 'v4.x' },
     'https://github.com/williamboman/mason.nvim',
