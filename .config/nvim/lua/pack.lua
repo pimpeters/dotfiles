@@ -21,7 +21,7 @@ vim.pack.add({
     'https://github.com/williamboman/mason.nvim',
     'https://github.com/williamboman/mason-lspconfig.nvim',
     'https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim',
-    { src = 'https://github.com/neovim/nvim-lspconfig', version = 'v2.5.0' },
+    { src = 'https://github.com/neovim/nvim-lspconfig', version = 'v2.10.0' },
     'https://github.com/hrsh7th/nvim-cmp',
     'https://github.com/hrsh7th/cmp-nvim-lsp',
     'https://github.com/L3MON4D3/LuaSnip',

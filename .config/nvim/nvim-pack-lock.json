@@ -51,9 +51,9 @@
       "src": "https://github.com/hrsh7th/nvim-cmp"
     },
     "nvim-lspconfig": {
-      "rev": "8a9378a822719346a0288fa004dab302ca3c0a8f",
+      "rev": "229b79051b380377664edc4cbd534930154921a1",
       "src": "https://github.com/neovim/nvim-lspconfig",
-      "version": "'v2.5.0'"
+      "version": "'v2.10.0'"
     },
     "nvim-tree.lua": {
       "rev": "fb343438d49fba8c35ecc4829d66fca7a1f0ed3d",
